@@ -98,15 +98,14 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/d6g8l3.3mof21ot0c8.jpg
+  img:  https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/2yzoly.7atwxvv20g40.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # 主頁的 top_img   (添加封面图的 地址)
-index_img:  https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-9mjoy1.39646dc4d6w0.jpg
-
+index_img:  https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg
 # 默認的 top_img，當頁面的 top_img 沒有配置時，會顯示 default_top_img
 default_top_img:
 
@@ -529,7 +528,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background:  url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l8zo2l.651z4oj8p8k0.jpg)
+background:  url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg)
 
 # Footer Background
 footer_bg: true
