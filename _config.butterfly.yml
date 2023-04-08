@@ -98,8 +98,8 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
-  effect: true
+  img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/d6g8l3.3mof21ot0c8.jpg
+  effect: false
 
 # Disable all banner image
 disable_top_img: false
