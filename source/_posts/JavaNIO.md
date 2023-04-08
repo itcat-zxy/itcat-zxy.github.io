@@ -3,19 +3,14 @@ title: Java NIO的操作
 tags:
   - java
   - NIO
-
 category: Java
-keywords: Java,NIO
+keywords: 'Java,NIO'
 description: 对学习java IO的一些知识笔记
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/d63vzl.6t9hb17c8fk0.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/d63vzl.6t9hb17c8fk0.jpg'
+abbrlink: ee9c
+top_img: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg'
+date: 2023-04-08 20:11:12
 ---
-
 
 
 # Java IO
