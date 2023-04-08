@@ -9,7 +9,7 @@ keywords: Java,Android
 description: 对学习java的一些知识笔记
 
 #文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg
+cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/3l37e9.1zuylvywwz5s.jpg
 
 abbrlink: 
 date:  2023-4-8 20:11:12
