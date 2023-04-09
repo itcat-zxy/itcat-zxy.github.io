@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://anzhiy.cn/posts/DevOps.html</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://anzhiy.cn/posts/6f3e.html</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://anzhiy.cn/posts/f9b5.html</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://anzhiy.cn/posts/2529.html</loc>
     
     <lastmod>2023-04-09</lastmod>
@@ -65,25 +92,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/DevOps.html</loc>
-    
-    <lastmod>2023-04-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://anzhiy.cn/posts/6f3e.html</loc>
-    
-    <lastmod>2023-04-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://anzhiy.cn/posts/f9b5.html</loc>
+    <loc>https://anzhiy.cn/posts/Summary.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
