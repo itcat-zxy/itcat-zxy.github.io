@@ -42,7 +42,7 @@ copy:
 #   icon: link || the description
 social:
   fab fa-github: https://github.com/itcat-zxy || Github
-  # fas fa-envelope: mailto:2642322081@qq.com || Email
+  fas fa-envelope: mailto:2642322081@qq.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
