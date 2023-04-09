@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://anzhiy.cn/posts/f9b5.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/DevOps.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/2529.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/Summary.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/8e2e.html</loc>
+    <loc>https://itcat-zxy.github.io/categories/index.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/ee9c.html</loc>
+    <loc>https://itcat-zxy.github.io/link/index.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/4163.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/6f3e.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/ae7e.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/f9b5.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/cfb9.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/2529.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/5b3e.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/8e2e.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/DevOps.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/ee9c.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/Summary.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/4163.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -92,7 +92,25 @@
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/posts/6f3e.html</loc>
+    <loc>https://itcat-zxy.github.io/posts/ae7e.html</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/cfb9.html</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/5b3e.html</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -102,7 +120,7 @@
   
 
   <url>
-    <loc>https://anzhiy.cn/</loc>
+    <loc>https://itcat-zxy.github.io/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -110,56 +128,56 @@
 
   
   <url>
-    <loc>https://anzhiy.cn/tags/java/</loc>
+    <loc>https://itcat-zxy.github.io/tags/java/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/Spring-boot/</loc>
+    <loc>https://itcat-zxy.github.io/tags/Spring-boot/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/Thread/</loc>
+    <loc>https://itcat-zxy.github.io/tags/Thread/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/Map/</loc>
+    <loc>https://itcat-zxy.github.io/tags/Map/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/NIO/</loc>
+    <loc>https://itcat-zxy.github.io/tags/NIO/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/Leetcode/</loc>
+    <loc>https://itcat-zxy.github.io/tags/Leetcode/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/Markdown/</loc>
+    <loc>https://itcat-zxy.github.io/tags/Markdown/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/tags/blog/</loc>
+    <loc>https://itcat-zxy.github.io/tags/blog/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -168,21 +186,21 @@
 
   
   <url>
-    <loc>https://anzhiy.cn/categories/Java/</loc>
+    <loc>https://itcat-zxy.github.io/categories/Java/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/categories/JVM/</loc>
+    <loc>https://itcat-zxy.github.io/categories/JVM/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://anzhiy.cn/categories/Typora/</loc>
+    <loc>https://itcat-zxy.github.io/categories/Typora/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
