@@ -3,17 +3,13 @@ title: Java并发编程
 tags:
   - java
   - Thread
-
 category: Java
-keywords: Java, Threadsafe
+keywords: 'Java, Threadsafe'
 description: 对java并发编程的学习
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l8zo2l.651z4oj8p8k0.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-y8z62g.6bysli9u6kw0.jpg
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l8zo2l.651z4oj8p8k0.jpg'
+abbrlink: '2529'
+date: 2023-04-08 20:11:12
+top_img:
 ---
 
 

@@ -2,17 +2,13 @@
 title: javaSE继承
 tags:
   - java
-
 category: Java
-keywords: Java,Android
+keywords: 'Java,Android'
 description: 对学习javaSE的一些知识笔记
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/3l37e9.1zuylvywwz5s.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/3l37e9.1zuylvywwz5s.jpg'
+abbrlink: '4163'
+date: 2023-04-08 20:11:12
+top_img:
 ---
 
 

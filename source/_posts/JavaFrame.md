@@ -3,17 +3,13 @@ title: Java 容器
 tags:
   - java
   - Map
-
 category: Java
-keywords: Java, Collection
+keywords: 'Java, Collection'
 description: 对学习java 容器的一些知识笔记
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/12.5i5frzm2sg00.jpg
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg'
+abbrlink: 8e2e
+date: 2023-04-08 20:11:12
+top_img:
 ---
 
 

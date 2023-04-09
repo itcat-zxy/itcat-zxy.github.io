@@ -8,7 +8,7 @@ description: 规范代码的可读性
 sticky: 1
 cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qz3dvd.23z5dyj0l3r4.jpg'
 abbrlink: 6f3e
-top_img: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg'
+top_img: 
 date: 2023-04-08 20:11:12
 ---
 

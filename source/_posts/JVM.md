@@ -3,18 +3,13 @@ title: Java虚拟机
 tags:
   - java
   - Spring boot
-
-
 category: JVM
-keywords: Java,JVM
+keywords: 'Java,JVM'
 description: 对学习java虚拟机的一些知识笔记
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg'
+abbrlink: f9b5
+date: 2023-04-08 20:11:12
+top_img:
 ---
 
 

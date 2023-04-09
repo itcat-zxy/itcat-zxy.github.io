@@ -3,17 +3,14 @@ title: Typora的使用技巧
 tags:
   - Markdown
   - blog
-
 category: Typora
-keywords: Typora, Markdown
+keywords: 'Typora, Markdown'
 description: 对学习Typora的一些知识笔记
-
-#文章图片展示
-cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-rr3y61.61wqpxgvgnw0.jpg
-
-abbrlink: 
-date:  2023-4-8 20:11:12
-top_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-o59rep.5ituv3vx8mw0.jpg
+cover: >-
+  https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-rr3y61.61wqpxgvgnw0.jpg
+abbrlink: 5b3e
+date: 2023-04-08 20:11:12
+top_img:
 ---
 
 
