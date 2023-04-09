@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://itcat-zxy.github.io/posts/4163.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/ae7e.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/cfb9.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/ae7e.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/5b3e.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/DevOps.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/Summary.html</loc>
-    <lastmod>2023-04-09</lastmod>
-  </url>
-  <url>
     <loc>https://itcat-zxy.github.io/posts/6f3e.html</loc>
     <lastmod>2023-04-09</lastmod>
   </url>
@@ -50,6 +22,38 @@
   </url>
   <url>
     <loc>https://itcat-zxy.github.io/posts/ee9c.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/4163.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/ae7e.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/linux.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/cfb9.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/ae7e.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/5b3e.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/DevOps.html</loc>
+    <lastmod>2023-04-09</lastmod>
+  </url>
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/Summary.html</loc>
     <lastmod>2023-04-09</lastmod>
   </url>
 </urlset> 
