@@ -1,5 +1,5 @@
 ---
-title: javaSE继承
+title: javaSE基础
 tags:
   - java
 category: Java
