@@ -920,7 +920,14 @@ inject:
      # 顶部小进度条
     - <script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
   bottom:
-    - <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
+      # 取消歌词
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    - <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+    - <script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js"></script>
+    - <meting-js server="netease" type="playlist" id="8152976493" fixed="true" showlrc="false" lrc-type="0"></meting-js>
+    # - <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
+    # 标签更换
     - <script async src="/js/title.js"></script>
     
      # 自定义js
