@@ -180,11 +180,11 @@
     background: transparent !important;
   }
   /* 页脚透明 */
-  /* #footer {
+  #footer {
     background: transparent !important;
-  } */
+  }
   
-  /* 头图透明 */
+  /*头图透明 */
   /* #page-header {
     background: transparent !important;
   } */
