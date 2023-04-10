@@ -5,7 +5,7 @@ tags:
 category: Java
 keywords: 'Java, sort，framework'
 description: java八股文
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-9mjoy1.39646dc4d6w0.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/yx76vg.2hp562czmck0.jpg'
 abbrlink: interview_frame
 date: 2023-04-08 20:11:12
 top_img:

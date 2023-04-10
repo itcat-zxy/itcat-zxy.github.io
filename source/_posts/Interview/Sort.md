@@ -6,7 +6,7 @@ tags:
 category: Java
 keywords: 'Java, sort'
 description: java八股文
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/yx8q3g.uxjnl04da4g.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/6oxwpx.2cnvd947nl7o.jpg'
 abbrlink: sort
 date: 2023-04-08 20:11:12
 top_img:

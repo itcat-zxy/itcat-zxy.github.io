@@ -915,12 +915,16 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+     # 自定义CSS
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
      # 顶部小进度条
     - <script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
   bottom:
     - <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
     - <script async src="/js/title.js"></script>
+    
+     # 自定义js
+    # - <script async data-pjax src="/js/anzhiyu.js"></script>
     
 
 
@@ -1173,7 +1177,9 @@ CDN:
     # flickr_justified_gallery_css:
     # aplayer_css:
     # aplayer_js:
-    # meting_js:
+    # meting_js:  添加后会屏蔽掉之前的音乐配置
+
+    # meting_js: https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
     # prismjs_js:
     # prismjs_lineNumber_js:
     # prismjs_autoloader:
