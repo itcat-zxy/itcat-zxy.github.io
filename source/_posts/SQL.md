@@ -7,7 +7,7 @@ category: Java
 keywords: 'Java, mysql'
 description: 数据库
 cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qzrjmq.38ol7wnpwgo0.jpg'
-abbrlink: ae7e
+abbrlink: sql
 date: 2023-04-08 20:11:12
 top_img:
 ---
