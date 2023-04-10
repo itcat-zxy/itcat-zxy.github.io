@@ -51,8 +51,9 @@ social:
 # Algolia search --- 搜索系统
 algolia_search:
   enable: false
-  hits:
-    per_page: 6
+  hits: 
+    per_page: 6  #
+
 
 
 # Local search
