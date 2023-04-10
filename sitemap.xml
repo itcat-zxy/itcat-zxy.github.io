@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://itcat-zxy.github.io/link/index.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/JVM.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://itcat-zxy.github.io/posts/2529.html</loc>
     
     <lastmod>2023-04-10</lastmod>
@@ -101,42 +83,6 @@
   </url>
   
   <url>
-    <loc>https://itcat-zxy.github.io/posts/interview_frame.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/interview_jvm.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/sort.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://itcat-zxy.github.io/posts/concurrency.html</loc>
-    
-    <lastmod>2023-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://itcat-zxy.github.io/posts/DevOps.html</loc>
     
     <lastmod>2023-04-10</lastmod>
@@ -156,6 +102,42 @@
   
   <url>
     <loc>https://itcat-zxy.github.io/categories/index.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/link/index.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/JVM.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/sort.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/concurrency.html</loc>
     
     <lastmod>2023-04-10</lastmod>
     
@@ -192,6 +174,24 @@
   
   <url>
     <loc>https://itcat-zxy.github.io/posts/os.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/interview_frame.html</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://itcat-zxy.github.io/posts/interview_jvm.html</loc>
     
     <lastmod>2023-04-10</lastmod>
     
