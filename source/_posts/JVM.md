@@ -7,7 +7,7 @@ category: JVM
 keywords: 'Java,JVM'
 description: 对学习java虚拟机的一些知识笔记
 cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg'
-abbrlink: f9b5
+abbrlink: JVM
 date: 2023-04-08 20:11:12
 top_img:
 ---
