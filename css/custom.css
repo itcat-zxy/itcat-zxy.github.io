@@ -99,16 +99,16 @@
   
   /* 首页文章卡片 */
   #recent-posts > .recent-post-item {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.75);
   }
   
   /* 首页侧栏卡片 */
   #aside-content .card-widget {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 234, 234, 0.75);
   }
 
   /*侧边栏个人卡片渐变色*/
-  #aside-content > .card-widget.card-info {
+  /* #aside-content > .card-widget.card-info {
     background: linear-gradient(-45deg, var(--anzhiyu-main), #031764, #150136, #67044d);
     background-size: 400%;
     box-shadow: var(--anzhiyu-shadow-black);
@@ -119,32 +119,49 @@
   .site-data > a .headline,
   .site-data > a .length-num {
     color: var(--anzhiyu-white);
+  } */
+
+  /*白天主题下的配置*/
+  #aside-content> .card-widget.card-info {
+    /*换成自己图片的地址*/
+    background: rgba(253, 234, 234, 0.75);
+    /* background-image: url('./bg.jpg'); */
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%
   }
+  /*黑暗主题下的配置*/
+  [data-theme=dark] #aside-content>.card-widget.card-info {
+    /*换成自己图片的地址*/
+    background: rgba(253, 234, 234, 0.75);
+    /* background-image: url('./bbg.png') !important */
+  }
+
 
   
   /* 文章页面正文背景 */
   div#post {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(247, 232, 232, 0.9);
   }
   
   /* 分页页面 */
   div#page {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 232, 232, 0.9);
   }
   
   /* 归档页面 */
   div#archive {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 233, 233, 0.9);
   }
   
   /* 标签页面 */
   div#tag {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 234, 234, 0.9);
   }
   
   /* 分类页面 */
   div#category {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 238, 238, 0.9);
   }
   
   /*夜间模式伪类遮罩层透明*/
@@ -180,9 +197,9 @@
     background: transparent !important;
   }
   /* 页脚透明 */
-  #footer {
+  /* #footer {
     background: transparent !important;
-  }
+  } */
   
   /*头图透明 */
   /* #page-header {
@@ -201,7 +218,7 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #3b70fc;
+    background-color: #648cfa;
     border-radius: 2em;
   }
   
@@ -272,7 +289,10 @@
     padding: 30px;
     margin: 30px 0px 0px 0px;
   }
+
   
+  
+
   /* md网站下划线 */
   #article-container a:hover {
     text-decoration: none !important;
