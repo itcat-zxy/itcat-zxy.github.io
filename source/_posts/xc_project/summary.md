@@ -6,7 +6,7 @@ category: Java
 keywords: 
 description: 学成在线-项目总结
 cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/ex8rgr.40uro7fkoug0.jpg'
-abbrlink: Summary
+abbrlink: summary
 date: 2023-04-08 20:11:12
 sticky: 2
 top_img:
