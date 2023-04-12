@@ -931,7 +931,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
      # 顶部小进度条
     - <script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
-    # 鼠标魔改
+    # custom.css样式：  鼠标魔改
     - <link rel="stylesheet" href="/css/custom.css">
     # 悬挂小猫
     - <link rel="stylesheet" href="/css/cat.css">
@@ -976,7 +976,11 @@ inject:
     - <script async data-pjax src="/js/anzhiyu.js"></script>
     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
     - <script async src="/js/anzhiyuOnlyOne.js"></script>
-        
+    # 右键菜单
+    - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
+    - <script type="text/javascript" src="/js/rightmenu.js"></script>
+    # 切换夜间模式动画
+    - <script src="/js/sun_moon.js" async></script>
 
 
 # tag-plugins-plus  
