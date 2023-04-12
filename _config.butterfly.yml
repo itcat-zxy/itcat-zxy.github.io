@@ -864,9 +864,6 @@ pjax:
 aplayerInject:
   enable: true
   per_page: true
-# aplayer音乐
-  #- <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
-
 
 # Snackbar (Toast Notification 彈窗)
 # https://github.com/polonel/SnackBar
@@ -943,16 +940,15 @@ inject:
     # 引入Vue和Element相关依赖--弹窗 
     - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"> # 引入组件库(f12)
     # 帧率检测
-    - <span id="fps"></span> 
+    # - <span id="fps"></span> 
     # 安知鱼的aplayer播放器css
     - <link rel="stylesheet" href="/css/aplayer.css">
   bottom:
-      # 取消歌词
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    # 引入aplayer插件
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js"></script>
-    - <meting-js server="netease" type="playlist" id="8152976493" fixed="true" showlrc="false" lrc-type="0"></meting-js>
+
     # 标签更换
     - <script async src="/js/title.js"></script>
     #鼠标魔改
@@ -975,7 +971,7 @@ inject:
     # 控制台样式自定义（安知鱼）
     - <script async src="/js/console.js"></script>
     # 帧率检测
-    - <script async src="/js/fps.js"></script> 
+    # - <script async src="/js/fps.js"></script> 
     # 安知鱼的aplayer播放器 js
     - <script async data-pjax src="/js/anzhiyu.js"></script>
     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
@@ -1252,7 +1248,9 @@ CDN:
     # flickr_justified_gallery_css:
     aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
     aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
-    meting_js: https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
+    #引用自己本地的
+    meting_js: https://github.com/itcat-zxy/itcat-zxy.github.io/tree/main/source/js/meting_js.js
+    
 
     # prismjs_js:
     # prismjs_lineNumber_js:
