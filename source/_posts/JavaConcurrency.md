@@ -9,7 +9,7 @@ description: 对java并发编程的学习
 cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l8zo2l.651z4oj8p8k0.jpg'
 abbrlink: '2529'
 date: 2023-04-08 20:11:12
-top_img:
+top_img: false
 ---
 
 

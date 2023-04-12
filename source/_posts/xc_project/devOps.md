@@ -9,6 +9,7 @@ cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/6dm86q.4dg3hnfjkp
 abbrlink: DevOps
 date: 2023-04-08 20:11:12
 top_img:
+swiper_index: 1 #置顶轮播图顺序，非负整数，数字越大越靠前
 ---
 
 

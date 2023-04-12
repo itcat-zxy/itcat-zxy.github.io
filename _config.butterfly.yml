@@ -9,6 +9,7 @@ menu:
   Categories: /categories/ || fas fa-folder-open
   清单||fas fa-list:
     Music: /music/ || fas fa-music
+    照片: /gallery/ || fas fa-images
     Movie: /movies/ || fas fa-video
   Link: /link/ || fas fa-link
   About: /about/ || fas fa-heart
@@ -26,7 +27,7 @@ highlight_theme: light #  darker / pale night / light / ocean / mac / mac light 
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
+highlight_height_limit: 200 # unit: px
 code_word_wrap: false
 
 # copy settings
@@ -443,7 +444,8 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text:  Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
+  # custom_text:  Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
+  custom_text: I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p>
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -607,17 +609,26 @@ display_mode: light
 # Beautify (美化頁面顯示)
 beautify:
   enable: true
-  field: site # site/post
-  title-prefix-icon: # '\f0c1'
-  title-prefix-icon-color: # '#F47466'
+  field: post # site/post
+  # title-prefix-icon: '\f0c1' 原内容
+  title-prefix-icon: '\f863'
+  title-prefix-icon-color: "#F47466"
+
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-  global-font-size:
-  code-font-size:
-  font-family:
-  code-font-family:
+  global-font-size: '15px'
+  code-font-size: '14px'
+  # -apple-system, BlinkMacSystemFont, "Segoe UI" , "Helvetica Neue" , Lato, Roboto, "PingFang SC" , "Microsoft JhengHei" , "Microsoft YaHei" , sans-serif
+  # Wenkai, consolas, -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+  font-family: var(--global-font), Consolas_1, -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+  # consolas, ZhuZiAWan_light, "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif
+  # Consolas_1, ZhuZiAWan_light, "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif
+  code-font-family: Consolas_1, var(--global-font), "Microsoft YaHei", Menlo, "PingFang SC", "Microsoft JhengHei", sans-serif
+
+
+
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
@@ -738,7 +749,8 @@ busuanzi:
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: false
-  publish_date:  
+  publish_date: 4/1/2023 00:00:00
+
 
 # Aside widget - Newest Comments, 最新评论
 newest_comments:
@@ -842,10 +854,11 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
     # - xxxx
+
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
@@ -921,6 +934,18 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
      # 顶部小进度条
     - <script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
+    # 鼠标魔改
+    - <link rel="stylesheet" href="/css/custom.css">
+    # 悬挂小猫
+    - <link rel="stylesheet" href="/css/cat.css">
+    # 顶部渐变条色加载条
+    - <link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'">
+    # 引入Vue和Element相关依赖--弹窗 
+    - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"> # 引入组件库(f12)
+    # 帧率检测
+    - <span id="fps"></span> 
+    # 安知鱼的aplayer播放器css
+    - <link rel="stylesheet" href="/css/aplayer.css">
   bottom:
       # 取消歌词
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -928,19 +953,31 @@ inject:
     - <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js"></script>
     - <meting-js server="netease" type="playlist" id="8152976493" fixed="true" showlrc="false" lrc-type="0"></meting-js>
-    # - <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
-    
     # 标签更换
     - <script async src="/js/title.js"></script>
-
-    #星空特效
-    - <canvas id="universe"></canvas>
-    - <script defer src="/js/universe.js"></script>
-
-    
-     # 自定义js
-    # - <script async data-pjax src="/js/anzhiyu.js"></script>
-    
+    #鼠标魔改
+    - <script defer src="/js/cursor.js"></script>
+    #悬挂小猫
+    - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script>
+    - <script defer data-pjax src="/js/cat.js"></script>
+    # 顶部渐变条色加载条
+    - <script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
+    # 引入Vue和Element相关依赖--弹窗 
+    - <script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script> # 引入VUE(f12)
+    - <script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script> # 引入ElementUI(f12)
+    # 禁用F12
+    - <script defer src="/js/f12.js"></script>
+    # 樱花飘落效果
+    - <script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script>
+    # 控制台样式自定义（安知鱼）
+    - <script async src="/js/console.js"></script>
+    # 帧率检测
+    - <script async src="/js/fps.js"></script> 
+    # 安知鱼的aplayer播放器 js
+    - <script async data-pjax src="/js/anzhiyu.js"></script>
+    - <script async data-pjax src="/js/anzhiyufunction.js"></script>
+    - <script async src="/js/anzhiyuOnlyOne.js"></script>
+        
 
 
 # tag-plugins-plus  
@@ -1022,6 +1059,23 @@ envelope_comment:
     title: 留言板
     comments: true
 
+
+# hexo-butterfly-swiper
+# see https://akilar.top/posts/8e1264d1/
+swiper:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: all # 应用页面
+  timemode: date #date/updated
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  default_descr: 再怎么看我也不知道怎么描述它的啦！
+  swiper_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css #swiper css依赖
+  swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
+  custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
+  custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
 
 
 # footer_beautify
@@ -1193,11 +1247,10 @@ CDN:
     # fontawesome:
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
-    # aplayer_css:
-    # aplayer_js:
-    # meting_js:  添加后会屏蔽掉之前的音乐配置
+    aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+    aplayer_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    meting_js: https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
 
-    # meting_js: https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js
     # prismjs_js:
     # prismjs_lineNumber_js:
     # prismjs_autoloader:
