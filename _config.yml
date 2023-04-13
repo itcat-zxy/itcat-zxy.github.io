@@ -105,8 +105,8 @@ theme: butterfly
 deploy:
   - type: git
     repository:
-      github: git@github.com:anzhiyu-c/anzhiyu-c.github.io.git  #用户名@服务器Ip:git仓库位置
-      # github: https://anzhiyu-c:git@github.com/anzhiyu-c/anzhiyu-c.github.io.git
+      github: git@github.com:itcat-zxy/itcat-zxy.github.io.git  #用户名@服务器Ip:git仓库位置
+      # github: https://anzhiyu-c:xxx@github.com/anzhiyu-c/anzhiyu-c.github.io.git
     branch: master
 
 
