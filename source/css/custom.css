@@ -34,16 +34,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* 时间轴生肖icon */
-  svg.icon {
-    /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */
-    width: 1em;
-    height: 1em;
-    /* width和height定义图标的默认宽度和高度*/
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
   
   .icon-zhongbiao::before {
     color: #f7c768;
@@ -826,3 +816,27 @@ h6::before {
 }
 
 
+/* 动态图标的标签 */
+svg.icon {
+  width: 1.28em;
+  height: 1.28em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+/* social.pug中的动图将渲染成下面标签，调节社交图标的大小 */
+svg.social_icon {
+  width: 1.20em;
+  height: 1.20em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+/* css改动 菜单栏图标大小 */
+svg.menu_icon {
+  width: 1.28em;
+  height: 1.28em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

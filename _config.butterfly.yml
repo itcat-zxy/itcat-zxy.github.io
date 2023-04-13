@@ -42,8 +42,11 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  fab fa-github: https://github.com/itcat-zxy || Github
-  fas fa-envelope: mailto:2642322081@qq.com || Email
+  微信: /assets/QRCode.jpg || icon-weixin || faa-tada
+  QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-QQ || faa-tada
+  B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
+  QQ邮箱: mailto:2642322081@qq.com || icon-youxiang || faa-tada
+  力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
