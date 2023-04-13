@@ -984,6 +984,10 @@ inject:
     - <script type="text/javascript" src="/js/rightmenu.js"></script>
     # 切换夜间模式动画
     - <script src="/js/sun_moon.js" async></script>
+    # 节日弹窗& 公祭日变灰
+    - <script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script> # 节日弹窗依赖
+    - <script defer src="/js/lunar.js"></script> # 农历计算
+    - <script defer src="/js/day.js"></script> # 节日弹窗
 
 
 # tag-plugins-plus  
