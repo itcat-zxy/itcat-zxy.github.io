@@ -29,6 +29,29 @@ index 4d30c4a..b6be519 100644
 +//- 日夜切换动画
 +include ./custom/sun_moon.pug
 \ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/header/index.pug b/node_modules/hexo-theme-butterfly/layout/includes/header/index.pug
+index 8089f19..5acca7b 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/header/index.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/header/index.pug
+@@ -35,6 +35,18 @@ header#page-header(class=`${isHomeClass+isFixedClass}` style=bg_img)
+   if top_img !== false
+     if is_post()
+       include ./post-info.pug
++      section.main-hero-waves-area.waves-area
++        svg.waves-svg(xmlns='http://www.w3.org/2000/svg', xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28', preserveAspectRatio='none', shape-rendering='auto')
++          defs
++            path#gentle-wave(d='M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z')
++          g.parallax
++            use(href='#gentle-wave', x='48', y='0')
++            use(href='#gentle-wave', x='48', y='3')
++            use(href='#gentle-wave', x='48', y='5')
++            use(href='#gentle-wave', x='48', y='7')
++      #post-top-cover
++        img#post-top-bg(class='nolazyload' src=bg_img)
++        
+     else if is_home() 
+       #site-info
+         h1#site-title=site_title
 diff --git a/node_modules/hexo-theme-butterfly/layout/includes/header/social.pug b/node_modules/hexo-theme-butterfly/layout/includes/header/social.pug
 index b7b586e..7ee9926 100644
 --- a/node_modules/hexo-theme-butterfly/layout/includes/header/social.pug
@@ -224,7 +247,7 @@ index 03c6aaa..f7aafbf 100644
    - const { enable, hide, show } = theme.rightside_item_order
    - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
 diff --git a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
-index de71edb..140c09b 100644
+index de71edb..a3fe89d 100644
 --- a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
 +++ b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
 @@ -1,11 +1,21 @@
@@ -252,16 +275,17 @@ index de71edb..140c09b 100644
      .card-info-data.site-data.is-center
        a(href=url_for(config.archive_dir) + '/')
          .headline= _p('aside.articles')
-@@ -21,6 +31,9 @@ if theme.aside.card_author.enable
+@@ -21,7 +31,9 @@ if theme.aside.card_author.enable
        a#card-info-btn(href=theme.aside.card_author.button.link)
          i(class=theme.aside.card_author.button.icon)
          span=theme.aside.card_author.button.text
+-  
 +          i.faa-passing.animated(style="padding-left:20px;display:inline-block;vertical-align:middle;")
 +            svg.icon(style="height:28px;width:28px;fill:currentColor;position:relative;top:5px")
 +              use(xlink:href='#icon-xiaoqiche')
-   
      if(theme.social)
          .card-info-social-icons.is-center
+           !=fragment_cache('social', function(){return partial('includes/header/social')}) 
 diff --git a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js b/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
 index f4c018a..c936576 100644
 --- a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js

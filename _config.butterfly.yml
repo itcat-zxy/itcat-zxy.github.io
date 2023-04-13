@@ -943,7 +943,7 @@ inject:
     # 引入Vue和Element相关依赖--弹窗 
     - <link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"> # 引入组件库(f12)
     # 帧率检测
-    # - <span id="fps"></span> 
+    - <span id="fps"></span> 
     # 安知鱼的aplayer播放器css
     - <link rel="stylesheet" href="/css/aplayer.css">
   bottom:
@@ -974,7 +974,7 @@ inject:
     # 控制台样式自定义（安知鱼）
     - <script async src="/js/console.js"></script>
     # 帧率检测
-    # - <script async src="/js/fps.js"></script> 
+    - <script async src="/js/fps.js"></script> 
     # 安知鱼的aplayer播放器 js
     - <script async data-pjax src="/js/anzhiyu.js"></script>
     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
