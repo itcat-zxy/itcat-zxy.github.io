@@ -168,40 +168,42 @@ index 03c6aaa..9462e01 100644
    - const { enable, hide, show } = theme.rightside_item_order
    - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
 diff --git a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
-index de71edb..448fa9b 100644
+index de71edb..140c09b 100644
 --- a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
 +++ b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
-@@ -1,8 +1,19 @@
+@@ -1,11 +1,21 @@
  if theme.aside.card_author.enable
    .card-widget.card-info
 -    .is-center
 -      .avatar-img
 -        img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
-+      //- .is-center
-+      //-   .avatar-img
-+      //-     img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
-+      
++    //- .is-center
++      //- .avatar-img
++      //-   img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
 +      //- 添加信息卡片头像状态
-+      .author_top.is-center
-+        div.card-info-avatar
-+          .avatar-img
-+            img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
-+          div.author-status-box
-+            div.author-status
-+              g-emoji.g-emoji(alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg") 🐟
-+              span 认真摸鱼中
-+
++    .author_top.is-center
++      div.card-info-avatar
++        .avatar-img
++          img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
++        div.author-status-box
++          div.author-status
++            g-emoji.g-emoji(alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg") 🐟
++            span 认真摸鱼中
        .author-info__name= config.author
        .author-info__description!= theme.aside.card_author.description || config.description
  
-@@ -21,6 +32,9 @@ if theme.aside.card_author.enable
++
+     .card-info-data.site-data.is-center
+       a(href=url_for(config.archive_dir) + '/')
+         .headline= _p('aside.articles')
+@@ -21,6 +31,9 @@ if theme.aside.card_author.enable
        a#card-info-btn(href=theme.aside.card_author.button.link)
          i(class=theme.aside.card_author.button.icon)
          span=theme.aside.card_author.button.text
 +          i.faa-passing.animated(style="padding-left:20px;display:inline-block;vertical-align:middle;")
 +            svg.icon(style="height:28px;width:28px;fill:currentColor;position:relative;top:5px")
-+              use(xlink:href='#icon-xiaoqiche')  
-               
++              use(xlink:href='#icon-xiaoqiche')
+   
      if(theme.social)
          .card-info-social-icons.is-center
 diff --git a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js b/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
