@@ -1,0 +1,237 @@
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/head.pug b/node_modules/hexo-theme-butterfly/layout/includes/head.pug
+index 4d30c4a..1f3f593 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/head.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/head.pug
+@@ -67,3 +67,6 @@ include ./head/noscript.pug
+ !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
+ 
+ !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
++
++//- 制作一个盛放内容的盒子
++#myscoll
+\ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+index dde47c5..deb9980 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+@@ -1,10 +1,31 @@
+ - var htmlClassHideAside = theme.aside.enable && theme.aside.hide ? 'hide-aside' : ''
+ - page.aside = is_archive() ? theme.aside.display.archive: is_category() ? theme.aside.display.category : is_tag() ? theme.aside.display.tag : page.aside
+ - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
+-- var pageType = is_post() ? 'post' : 'page'
++//- - var pageType = is_post() ? 'post' : 'page'
++- var pageType = is_home() ? 'page home' : is_post() ? 'post' : 'page'
+ 
+ doctype html
+ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
++  //- 添加禁用F12
++  script.
++    ((function() {var callbacks = [],timeLimit = 50,open = false;setInterval(loop, 1);return {addListener: function(fn) {callbacks.push(fn);},cancleListenr: function(fn) {callbacks = callbacks.filter(function(v) {return v !== fn;});}}
++    function loop() {var startTime = new Date();debugger;if (new Date() - startTime > timeLimit) {if (!open) {callbacks.forEach(function(fn) {fn.call(null);});}open = true;window.stop();alert('你真坏，请关闭控制台！');document.body.innerHTML = "";} else {open = false;}}})()).addListener(function() {window.location.reload();});
++  script.
++    function toDevtools(){
++      let num = 0; 
++      let devtools = new Date();
++      devtools.toString = function() {
++        num++;
++        if (num > 1) {
++            alert('你真坏，请关闭控制台！')
++            window.location.href = "about:blank"
++            blast();
++        }
++      }
++      console.log('', devtools);
++    }
++    toDevtools();
++
+   head
+     include ./head.pug
+   body
+@@ -45,3 +66,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
+ 
+     include ./rightside.pug
+     include ./additional-js.pug
++
++    include ./music.pug
++    
++    !=partial('includes/third-party/search/index', {}, {cache: true})
++    !=partial('includes/rightmenu',{}, {cache:true})
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/music.pug b/node_modules/hexo-theme-butterfly/layout/includes/music.pug
+new file mode 100644
+index 0000000..b60bbb2
+--- /dev/null
++++ b/node_modules/hexo-theme-butterfly/layout/includes/music.pug
+@@ -0,0 +1,3 @@
++#nav-music
++  #nav-music-hoverTips(onclick='anzhiyu.musicToggle()') 播放音乐
++  meting-js#8152976493(server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random")
+\ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/rightmenu.pug b/node_modules/hexo-theme-butterfly/layout/includes/rightmenu.pug
+new file mode 100644
+index 0000000..a390604
+--- /dev/null
++++ b/node_modules/hexo-theme-butterfly/layout/includes/rightmenu.pug
+@@ -0,0 +1,75 @@
++#rightMenu.js-pjax
++    .rightMenu-group.rightMenu-small
++        a.rightMenu-item(href="javascript:window.history.back();")
++            i.fa.fa-arrow-left
++        a.rightMenu-item(href="javascript:window.history.forward();")
++            i.fa.fa-arrow-right
++        a.rightMenu-item(href="javascript:window.location.reload();")
++            i.fa.fa-refresh
++        a.rightMenu-item(href="javascript:rmf.scrollToTop();")
++            i.fa.fa-arrow-up
++    .rightMenu-group.rightMenu-line.hide#menu-text
++        a.rightMenu-item(href="javascript:rmf.copySelect();")
++            i.fa.fa-copy
++            span='复制'
++        a.rightMenu-item(href="javascript:window.open(\"https://www.baidu.com/s?wd=\"+window.getSelection().toString());window.location.reload();")
++            i.fa.fa-search
++            span='百度搜索'
++    .rightMenu-group.rightMenu-line.hide#menu-too
++        a.rightMenu-item(href="javascript:window.open(window.getSelection().toString());window.location.reload();")
++            i.fa.fa-link
++            span='转到链接'
++    .rightMenu-group.rightMenu-line.hide#menu-paste
++        a.rightMenu-item(href='javascript:rmf.paste()')
++            i.fa.fa-copy
++            span='粘贴'
++    .rightMenu-group.rightMenu-line.hide#menu-post
++        a.rightMenu-item(href="#post-comment")
++            i.fas.fa-comment
++            span='空降评论'
++        a.rightMenu-item(href="javascript:rmf.copyWordsLink()")
++            i.fa.fa-link
++            span='复制本文地址'
++    .rightMenu-group.rightMenu-line.hide#menu-to
++        a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
++            i.fa.fa-window-restore
++            span='新窗口打开'
++        a.rightMenu-item#menu-too(href="javascript:rmf.open()")
++            i.fa.fa-link
++            span='转到链接'
++        a.rightMenu-item(href="javascript:rmf.copyLink()")
++            i.fa.fa-copy
++            span='复制链接'
++    .rightMenu-group.rightMenu-line.hide#menu-img
++        a.rightMenu-item(href="javascript:rmf.saveAs()")
++            i.fa.fa-download
++            span='保存图片'
++        a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
++            i.fa.fa-window-restore
++            span='在新窗口打开'
++        a.rightMenu-item(href="javascript:rmf.copyLink()")
++            i.fa.fa-copy
++            span='复制图片链接'
++    .rightMenu-group.rightMenu-line
++        a.rightMenu-item(href="javascript:randomPost()")
++            i.fa.fa-paper-plane
++            span='随便逛逛'
++        a.rightMenu-item(href="javascript:switchNightMode();")
++            i.fa.fa-moon
++            span='昼夜切换'
++        if is_post()||is_page()
++            a.rightMenu-item(href="javascript:rmf.switchReadMode();")
++                i.fa.fa-book
++                span='阅读模式'
++        a.rightMenu-item(href="/personal/about/")
++            i.fa.fa-info-circle
++            span='关于博客'
++        a.rightMenu-item(href="javascript:toggleWinbox();")
++            i.fas.fa-cog
++            span='美化设置'
++        a.rightMenu-item(href="javascript:rmf.fullScreen();")
++            i.fas.fa-expand
++            span='切换全屏'
++        a.rightMenu-item(href="javascript:window.print();")
++            i.fa-solid.fa-print
++            span='打印页面'
+\ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/rightside.pug b/node_modules/hexo-theme-butterfly/layout/includes/rightside.pug
+index 03c6aaa..9462e01 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/rightside.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/rightside.pug
+@@ -30,6 +30,14 @@ mixin rightsideItem(array)
+           a#to_comment(href="#post-comment" title=_p("rightside.scroll_to_comment"))
+             i.fas.fa-comments
+ 
++      when 'share'
++          button.share(type="button" title='分享链接' onclick="share()")
++            i.fas.fa-share-nodes
++
++      when 'mouse'
++          button.share(type="button" title='右键模式' onclick="changeMouseMode()")
++            i.fas.fa-mouse
++
+ #rightside
+   - const { enable, hide, show } = theme.rightside_item_order
+   - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
+index de71edb..448fa9b 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/widget/card_author.pug
+@@ -1,8 +1,19 @@
+ if theme.aside.card_author.enable
+   .card-widget.card-info
+-    .is-center
+-      .avatar-img
+-        img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
++      //- .is-center
++      //-   .avatar-img
++      //-     img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
++      
++      //- 添加信息卡片头像状态
++      .author_top.is-center
++        div.card-info-avatar
++          .avatar-img
++            img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
++          div.author-status-box
++            div.author-status
++              g-emoji.g-emoji(alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg") 🐟
++              span 认真摸鱼中
++
+       .author-info__name= config.author
+       .author-info__description!= theme.aside.card_author.description || config.description
+ 
+@@ -21,6 +32,9 @@ if theme.aside.card_author.enable
+       a#card-info-btn(href=theme.aside.card_author.button.link)
+         i(class=theme.aside.card_author.button.icon)
+         span=theme.aside.card_author.button.text
++          i.faa-passing.animated(style="padding-left:20px;display:inline-block;vertical-align:middle;")
++            svg.icon(style="height:28px;width:28px;fill:currentColor;position:relative;top:5px")
++              use(xlink:href='#icon-xiaoqiche')  
+               
+     if(theme.social)
+         .card-info-social-icons.is-center
+diff --git a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js b/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
+index f4c018a..c936576 100644
+--- a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
++++ b/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
+@@ -1,13 +1,16 @@
++const logger = require('hexo-log')()
++
+ hexo.on('ready', () => {
+   const { version } = require('../../package.json')
+-  hexo.log.info(`
+-  ===================================================================
+-      #####  #    # ##### ##### ###### #####  ###### #      #   #
+-      #    # #    #   #     #   #      #    # #      #       # #
+-      #####  #    #   #     #   #####  #    # #####  #        #
+-      #    # #    #   #     #   #      #####  #      #        #
+-      #    # #    #   #     #   #      #   #  #      #        #
+-      #####   ####    #     #   ###### #    # #      ######   #
+-                            ${version}
+-  ===================================================================`)
++  logger.info(`
++  ======================================================================
++                                                                     
++██████  ██    ██ ████████ ████████ ███████ ██████  ███████ ██      ██    ██ 
++██   ██ ██    ██    ██       ██    ██      ██   ██ ██      ██       ██  ██  
++██████  ██    ██    ██       ██    █████   ██████  █████   ██        ████   
++██   ██ ██    ██    ██       ██    ██      ██   ██ ██      ██         ██    
++██████   ██████     ██       ██    ███████ ██   ██ ██      ███████    ██    
++
++                            主题版本：${version}
++  ======================================================================`)
+ })

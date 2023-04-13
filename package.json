@@ -44,7 +44,8 @@
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-theme-butterfly": "^4.7.0",
     "hexo-theme-landscape": "^0.0.3",
-    "live2d-widget-model-koharu": "^1.0.5"
+    "live2d-widget-model-koharu": "^1.0.5",
+    "patch-package": "^6.5.1"
   },
   "devDependencies": {
     "hexo-generator-baidu-sitemap": "^0.1.9"
