@@ -1,0 +1,29 @@
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+index dde47c5..250b8e8 100644
+--- a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
++++ b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
+@@ -45,3 +45,9 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
+ 
+     include ./rightside.pug
+     include ./additional-js.pug
++
++    include ./music.pug
++    
++
++
++    !=partial('includes/rightmenu',{}, {cache:true})
+\ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/music.pug b/node_modules/hexo-theme-butterfly/layout/includes/music.pug
+new file mode 100644
+index 0000000..82be58f
+--- /dev/null
++++ b/node_modules/hexo-theme-butterfly/layout/includes/music.pug
+@@ -0,0 +1,7 @@
++#nav-music
++  #nav-music-hoverTips(onclick='anzhiyu.musicToggle()') 播放音乐
++  meting-js#8152976493(server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random")
++
++
++
++  
+\ No newline at end of file
