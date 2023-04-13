@@ -672,24 +672,27 @@ subtitle:
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
     - 心情超爽快的 ~ ~ ~
-    - 就像穿着新内裤，迎接新年元旦的早晨一样
+    - 
 
 
 
-
-# Loading Animation (加載動畫)
+# Loading Animation (加载动画)
 preloader:
   enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
-  source: 1
+  # else all
+  source: 3
   # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url:
+  pace_css_url: /css/progress_bar.css
+  avatar: # 自定义头像
 
-# aside (側邊欄)
+
+
+
+# aside (侧边栏)
 # --------------------------------------
-
 aside:
   enable: true
   hide: false
