@@ -671,8 +671,8 @@ subtitle:
   source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
-    - 心情超爽快的 ~ ~ ~
-    - 
+    - Dirty Deeds Dong Dirt Cheap
+    - 吾心吾行，澄如明镜，所作所为，均为正义
 
 
 
@@ -949,6 +949,8 @@ inject:
     - <span id="fps"></span> 
     # 安知鱼的aplayer播放器css
     - <link rel="stylesheet" href="/css/aplayer.css">
+    # 黑夜霓虹灯1.0, 霓虹灯(必须defer否则有时候会不生效)
+    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
   bottom:
     # 引入aplayer插件
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -991,7 +993,9 @@ inject:
     - <script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script> # 节日弹窗依赖
     - <script defer src="/js/lunar.js"></script> # 农历计算
     - <script defer src="/js/day.js"></script> # 节日弹窗
-    
+    # 黑夜霓虹灯1.0
+    # - <script defer src="/js/light.js"></script> # 霓虹灯(必须defer否则有时候会不生效)
+
 # tag-plugins-plus  
 # see https://akilar.top/posts/615e2dec/     renderer渲染器
 tag_plugins:
