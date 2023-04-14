@@ -826,6 +826,7 @@ svg.icon {
   fill: currentColor;
   overflow: hidden;
 }
+
 /* social.pug中的动图将渲染成下面标签，调节社交图标的大小 */
 svg.social_icon {
   width: 1.20em;
