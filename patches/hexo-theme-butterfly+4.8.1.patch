@@ -607,7 +607,7 @@ index b7b586e..7ee9926 100644
 +          use(xlink:href=`#`+ icon_value)
 \ No newline at end of file
 diff --git a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
-index dde47c5..deb9980 100644
+index dde47c5..e7f2b9d 100644
 --- a/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
 +++ b/node_modules/hexo-theme-butterfly/layout/includes/layout.pug
 @@ -1,10 +1,31 @@
@@ -643,7 +643,15 @@ index dde47c5..deb9980 100644
    head
      include ./head.pug
    body
-@@ -45,3 +66,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
+@@ -13,6 +34,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
+ 
+     if theme.background
+       #web_bg
++      #an_music_bg
+       
+     !=partial('includes/sidebar', {}, {cache: true})
+ 
+@@ -45,3 +67,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
  
      include ./rightside.pug
      include ./additional-js.pug
@@ -712,6 +720,16 @@ index 0000000..b60bbb2
 +#nav-music
 +  #nav-music-hoverTips(onclick='anzhiyu.musicToggle()') 播放音乐
 +  meting-js#8152976493(server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random")
+\ No newline at end of file
+diff --git a/node_modules/hexo-theme-butterfly/layout/includes/page/music.pug b/node_modules/hexo-theme-butterfly/layout/includes/page/music.pug
+new file mode 100644
+index 0000000..bab5331
+--- /dev/null
++++ b/node_modules/hexo-theme-butterfly/layout/includes/page/music.pug
+@@ -0,0 +1,3 @@
++#anMusic-page
++  meting-js(id="8152976493" server="netease" type="playlist" mutex="true" preload="auto" theme="var(--anzhiyu-main)" order="list")
++  
 \ No newline at end of file
 diff --git a/node_modules/hexo-theme-butterfly/layout/includes/rightmenu.pug b/node_modules/hexo-theme-butterfly/layout/includes/rightmenu.pug
 new file mode 100644
@@ -869,6 +887,29 @@ index de71edb..a3fe89d 100644
      if(theme.social)
          .card-info-social-icons.is-center
            !=fragment_cache('social', function(){return partial('includes/header/social')}) 
+diff --git a/node_modules/hexo-theme-butterfly/layout/page.pug b/node_modules/hexo-theme-butterfly/layout/page.pug
+index 6c810ef..4a11187 100644
+--- a/node_modules/hexo-theme-butterfly/layout/page.pug
++++ b/node_modules/hexo-theme-butterfly/layout/page.pug
+@@ -2,7 +2,8 @@ extends includes/layout.pug
+ 
+ block content
+   #page
+-    if top_img === false
++    //- if top_img === false
++    if top_img === false && page.type != 'music'
+       h1.page-title= page.title
+ 
+     case page.type
+@@ -12,6 +13,8 @@ block content
+         include includes/page/flink.pug
+       when 'categories'
+         include includes/page/categories.pug
++      when 'music'
++        include includes/page/music.pug
+       default
+         include includes/page/default-page.pug
+ 
 diff --git a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js b/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
 index f4c018a..c936576 100644
 --- a/node_modules/hexo-theme-butterfly/scripts/events/welcome.js
