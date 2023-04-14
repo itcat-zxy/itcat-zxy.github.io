@@ -5,7 +5,7 @@ tags:
 category: Java
 keywords: 'Java, sort，JVM'
 description: java八股文
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/6dm86q.4dg3hnfjkp60.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/9dze3x.29c1goadw8pw.jpg'
 abbrlink: interview_jvm
 date: 2023-04-08 20:11:12
 top_img:

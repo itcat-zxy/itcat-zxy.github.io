@@ -5,7 +5,7 @@ tags:
 category: Java
 keywords: 
 description: 项目部署
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/6dm86q.4dg3hnfjkp60.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gp88dq.6ihtt0wko0o0.jpg'
 abbrlink: DevOps
 date: 2023-04-08 20:11:12
 top_img:

@@ -5,7 +5,7 @@ tags:
 category: Java
 keywords: 'Java,OS'
 description: 网络
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gp71d3.43bdwmcrj5c0.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/9mprjw.1h8f67vjx4ow.jpg'
 abbrlink: cdc6
 index: false
 date: 2023-04-08 20:11:12

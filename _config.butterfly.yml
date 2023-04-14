@@ -42,7 +42,7 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  微信: /assets/QRCode.jpg || icon-weixin || faa-tada
+  微信: source/img/QRCode.jpg || icon-weixin || faa-tada
   QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-QQ || faa-tada
   B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
   QQ邮箱: mailto:2642322081@qq.com || icon-youxiang || faa-tada
@@ -949,6 +949,8 @@ inject:
     - <span id="fps"></span> 
     # 安知鱼的aplayer播放器css
     - <link rel="stylesheet" href="/css/aplayer.css">
+    # 音乐馆页面
+    - <link rel="stylesheet" href="/css/music.css">
     # 黑夜霓虹灯1.0, 霓虹灯(必须defer否则有时候会不生效)
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
     # 飞只因太美
@@ -997,6 +999,8 @@ inject:
     - <script defer src="/js/day.js"></script> # 节日弹窗
     # 黑夜霓虹灯1.0
     # - <script defer src="/js/light.js"></script> # 霓虹灯(必须defer否则有时候会不生效)
+    # 音乐馆页面
+    - <script async data-pjax src="/js/music.js"></script> 
 
 # tag-plugins-plus  
 # see https://akilar.top/posts/615e2dec/     renderer渲染器
@@ -1094,6 +1098,7 @@ swiper:
   swiper_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
   custom_css: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
   custom_js: https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
+
 
 
 # footer_beautify
@@ -1211,18 +1216,16 @@ categoryBar:
   column: odd # odd：3列 | even：4列
   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
   message:
-    - descr: Ubuntu指南
-      cover: https://assets.akilar.top/image/cover1.webp
-    - descr: 玩转Win10
-      cover: https://assets.akilar.top/image/cover2.webp
-    - descr: 长篇小说连载
-      cover: https://assets.akilar.top/image/cover3.webp
+    - descr: JAVA
+      cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxep8y.51prnepydps0.jpg
+    - descr: 剑指Offer
+      cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/we8xr7.67bb205ywys0.jpg
+    - descr: Blog
+      cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-o59rep.5ituv3vx8mw0.jpg
     - descr: 个人日记
-      cover: https://assets.akilar.top/image/cover4.webp
-    - descr: 诗词歌赋
-      cover: https://assets.akilar.top/image/cover5.webp
+      cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg
     - descr: 杂谈教程
-      cover: https://assets.akilar.top/image/cover6.webp
+      cover: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxwo2w.2yii0cfz5oc0.jpg
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
 
 
