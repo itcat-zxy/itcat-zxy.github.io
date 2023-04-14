@@ -951,6 +951,8 @@ inject:
     - <link rel="stylesheet" href="/css/aplayer.css">
     # 黑夜霓虹灯1.0, 霓虹灯(必须defer否则有时候会不生效)
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+    # 飞只因太美
+    # - <link rel="stylesheet" href="https://npm.elemecdn.com/ethan4116-blog/lib/css/plane_v2.css">
   bottom:
     # 引入aplayer插件
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
@@ -1114,10 +1116,11 @@ footer_beautify:
   # runtime_js: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/js/runtime/runtime.min.js
   # runtime_css: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css
   runtime_js: https://github.com/itcat-zxy/itcat-zxy.github.io/blob/main/source/js/runtime.js
-  # runtime_css: https://itcat-zxy.github.io/sources/css/runtime.css
+  runtime_css: https://github.com/itcat-zxy/itcat-zxy.github.io/blob/main/source/css/runtime.css
   # 这是店长的 
   # runtime_js: https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
-  runtime_css: https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
+  # runtime_css: https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
+
   # 徽标部分配置项
   swiperpara: 0 #若非0，则开启轮播功能，每行徽标个数
   bdageitem:
