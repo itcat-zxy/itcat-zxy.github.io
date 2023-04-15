@@ -102,8 +102,8 @@ katex:
 
 # Favicon（网站图标）
 favicon:
-  small: /source/img/logo-16x16.png
-  medium: /source/img/logo-32x32.png
+  small:  /img/logo-16x16.png
+  medium:  /img/logo-32x32.png
 
 # Avatar (頭像)
 avatar:
