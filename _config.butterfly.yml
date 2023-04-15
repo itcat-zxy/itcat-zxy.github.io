@@ -100,8 +100,10 @@ katex:
 # Image (圖片設置)
 # --------------------------------------
 
-# Favicon（網站图标）
-favicon: /img/favicon.png
+# Favicon（网站图标）
+favicon:
+  small: /img/logo-16x16.svg
+  medium: /img/logo-32x32.svg
 
 # Avatar (頭像)
 avatar:
