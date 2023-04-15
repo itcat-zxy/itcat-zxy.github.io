@@ -14,7 +14,8 @@ email: 2642322081@qq.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://itcat-zxy.github.io/
+# url: https://itcat-zxy.github.io/
+url: https://www.jodio.cc/
 permalink: posts/:abbrlink.html
 permalink_defaults:
 pretty_urls:
