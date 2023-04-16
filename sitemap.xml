@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.jodio.cc/gallery/index.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.jodio.cc/link/index.html</loc>
     
     <lastmod>2023-04-16</lastmod>
@@ -30,33 +21,6 @@
   
   <url>
     <loc>https://www.jodio.cc/music/index.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/JVM.html</loc>
     
     <lastmod>2023-04-16</lastmod>
     
@@ -155,6 +119,78 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/summary.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/categories/index.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/gallery/index.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/git.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/JVM.html</loc>
+    
+    <lastmod>2023-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     
     <lastmod>2023-04-16</lastmod>
@@ -201,33 +237,6 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/concurrency.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/summary.html</loc>
-    
-    <lastmod>2023-04-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/categories/index.html</loc>
     
     <lastmod>2023-04-16</lastmod>
     
@@ -325,6 +334,13 @@
   
   <url>
     <loc>https://www.jodio.cc/categories/Java/</loc>
+    <lastmod>2023-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/categories/git/</loc>
     <lastmod>2023-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
