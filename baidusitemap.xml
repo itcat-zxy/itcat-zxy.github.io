@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jodio.cc/posts/offer.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/linux.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sql.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/5b3e.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/pdf.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/summary.html</loc>
-    <lastmod>2023-04-16</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/6f3e.html</loc>
     <lastmod>2023-04-16</lastmod>
   </url>
@@ -57,6 +29,30 @@
     <lastmod>2023-04-16</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/offer.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/linux.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/redis.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/sql.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/5b3e.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/pdf.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-04-16</lastmod>
   </url>
@@ -78,6 +74,14 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/concurrency.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
+    <lastmod>2023-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/summary.html</loc>
     <lastmod>2023-04-16</lastmod>
   </url>
 </urlset> 
