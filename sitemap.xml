@@ -29,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/2529.html</loc>
-    
-    <lastmod>2023-04-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.jodio.cc/posts/8e2e.html</loc>
     
     <lastmod>2023-04-18</lastmod>
@@ -111,6 +102,15 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/pdf.html</loc>
+    
+    <lastmod>2023-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
     
     <lastmod>2023-04-18</lastmod>
     
@@ -201,6 +201,15 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/JVM.html</loc>
+    
+    <lastmod>2023-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/2529.html</loc>
     
     <lastmod>2023-04-18</lastmod>
     
@@ -349,6 +358,13 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/tags/frame/</loc>
+    <lastmod>2023-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/tags/redis/</loc>
     <lastmod>2023-04-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -394,6 +410,13 @@
   
   <url>
     <loc>https://www.jodio.cc/categories/pdf/</loc>
+    <lastmod>2023-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/categories/Java-frame/</loc>
     <lastmod>2023-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
