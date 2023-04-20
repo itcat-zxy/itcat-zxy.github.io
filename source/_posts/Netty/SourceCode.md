@@ -6,7 +6,7 @@ tags:
 category: Java
 keywords: 'Java, netty'
 description: RPC框架，Netty实战
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o3okm7.5l9yyl8i4yc.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/weog1q.2o2kbuwjh6g0.webp'
 abbrlink: netty-source
 date: 2023-04-21 20:11:12
 top_img: 
