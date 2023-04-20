@@ -74,6 +74,24 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/spring.html</loc>
     
     <lastmod>2023-04-20</lastmod>
@@ -101,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/new_redis.html</loc>
+    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -119,25 +137,7 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
+    <loc>https://www.jodio.cc/posts/new_redis.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -156,6 +156,24 @@
   
   <url>
     <loc>https://www.jodio.cc/gallery/index.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -227,6 +245,15 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/4163.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/offer.html</loc>
     
     <lastmod>2023-04-20</lastmod>
@@ -245,7 +272,25 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/4163.html</loc>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/os.html</loc>
+    
+    <lastmod>2023-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -272,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
+    <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
@@ -291,51 +336,6 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/os.html</loc>
-    
-    <lastmod>2023-04-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     
     <lastmod>2023-04-20</lastmod>
     
