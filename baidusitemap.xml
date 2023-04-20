@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jodio.cc/posts/redis.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sql.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/shell.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
@@ -21,11 +13,67 @@
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/summary.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/JVM.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/2529.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/ee9c.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/4163.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/offer.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/linux.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/redis.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/sql.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/sort.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
@@ -53,14 +101,6 @@
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/summary.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/6f3e.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
@@ -73,31 +113,7 @@
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/JVM.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/2529.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/ee9c.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/4163.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/offer.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/linux.html</loc>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
@@ -106,22 +122,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
 </urlset> 
