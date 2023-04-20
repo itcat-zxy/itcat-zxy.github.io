@@ -1,0 +1,890 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><script>((function() {var callbacks = [],timeLimit = 50,open = false;setInterval(loop, 1);return {addListener: function(fn) {callbacks.push(fn);},cancleListenr: function(fn) {callbacks = callbacks.filter(function(v) {return v !== fn;});}}
+function loop() {var startTime = new Date();debugger;if (new Date() - startTime > timeLimit) {if (!open) {callbacks.forEach(function(fn) {fn.call(null);});}open = true;window.stop();alert('你真坏，请关闭控制台！');document.body.innerHTML = "";} else {open = false;}}})()).addListener(function() {window.location.reload();});</script><script>function toDevtools(){
+  let num = 0; 
+  let devtools = new Date();
+  devtools.toString = function() {
+    num++;
+    if (num > 1) {
+        alert('你真坏，请关闭控制台！')
+        window.location.href = "about:blank"
+        blast();
+    }
+  }
+  console.log('', devtools);
+}
+toDevtools();
+</script><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Kafka消息队列 | JONI🥝</title><meta name="author" content="JO🥝,2642322081@qq.com"><meta name="copyright" content="JO🥝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对消息队列的集群搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kafka消息队列">
+<meta property="og:url" content="https://www.jodio.cc/posts/kafka.html">
+<meta property="og:site_name" content="JONI🥝">
+<meta property="og:description" content="对消息队列的集群搭建">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg">
+<meta property="article:published_time" content="2023-04-20T20:11:12.000Z">
+<meta property="article:modified_time" content="2023-04-20T04:09:31.559Z">
+<meta property="article:author" content="JO🥝">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="kafka">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg"><link rel="shortcut icon" href="/img/sanzhu48x48.png"><link rel="canonical" href="https://www.jodio.cc/posts/kafka.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Kafka消息队列',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-20 04:09:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><span id="fps"></span><link rel="stylesheet" href="/css/aplayer.css"><link rel="stylesheet" href="/css/music.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><div id="myscoll"></div><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://github.com/itcat-zxy/itcat-zxy.github.io/blob/main/source/css/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="JONI🥝" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="an_music_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxwo2w.2yii0cfz5oc0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="JONI🥝"><span class="site-name">JONI🥝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Kafka消息队列</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-20T20:11:12.000Z" title="发表于 2023-04-20 20:11:12">2023-04-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-20T04:09:31.559Z" title="更新于 2023-04-20 04:09:31">2023-04-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Kafka消息队列"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="background-image: url('https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg')"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Kafka-一"><a href="#Kafka-一" class="headerlink" title="Kafka(一)"></a>Kafka(一)</h1><h2 id="Kafka简介"><a href="#Kafka简介" class="headerlink" title="Kafka简介"></a>Kafka简介</h2><h3 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h3><ul>
+<li>消息队列——用于存放消息的组件</li>
+<li>程序员可以将消息放入到队列中，也可以从消息队列中获取消息</li>
+<li>很多时候消息队列不是一个永久性的存储，是作为临时存储存在的（设定一个期限：设置消息在MQ中保存10天）</li>
+<li>消息队列中间件：消息队列的组件，例如：Kafka、Active MQ、RabbitMQ、RocketMQ、ZeroMQ</li>
+</ul>
+<h3 id="Kafka的应用场景"><a href="#Kafka的应用场景" class="headerlink" title="Kafka的应用场景"></a>Kafka的应用场景</h3><ul>
+<li>异步处理<ul>
+<li>可以将一些比较耗时的操作放在其他系统中，通过消息队列将需要进行处理的消息进行存储，其他系统可以消费消息队列中的数据</li>
+<li>比较常见的：发送短信验证码、发送邮件</li>
+</ul>
+</li>
+</ul>
+<p><img src="[image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper" alt="image-20200916093856262">/image-20200916093856262.png)</p>
+<ul>
+<li>系统解耦<ul>
+<li>原先一个微服务是通过接口（HTTP）调用另一个微服务，这时候耦合很严重，只要接口发生变化就会导致系统不可用</li>
+<li>使用消息队列可以将系统进行解耦合，现在第一个微服务可以将消息放入到消息队列中，另一个微服务可以从消息队列中把消息取出来进行处理。进行系统解耦</li>
+</ul>
+</li>
+</ul>
+<p><img src="[image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper" alt="image-20200916093908261">/image-20200916093908261.png)</p>
+<ul>
+<li>流量削峰<ul>
+<li>因为消息队列是低延迟、高可靠、高吞吐的，可以应对大量并发</li>
+</ul>
+</li>
+</ul>
+<p><img src="[image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper" alt="image-20200916093919754">/image-20200916093919754.png)</p>
+<ul>
+<li>日志处理<ul>
+<li>可以使用消息队列作为临时存储，或者一种通信管道</li>
+</ul>
+</li>
+</ul>
+<p><img src="[image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper" alt="image-20200916093933994">/image-20200916093933994.png)</p>
+<h3 id="消息队列的两种模型"><a href="#消息队列的两种模型" class="headerlink" title="消息队列的两种模型"></a>消息队列的两种模型</h3><ul>
+<li>生产者、消费者模型<ul>
+<li>生产者负责将消息生产到MQ中</li>
+<li>消费者负责从MQ中获取消息</li>
+<li>生产者和消费者是解耦的，可能是生产者一个程序、消费者是另外一个程序</li>
+</ul>
+</li>
+<li>消息队列的模式<ul>
+<li>点对点：一个消费者消费一个消息</li>
+<li>发布订阅：多个消费者可以消费一个消息</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kafka集群搭建"><a href="#Kafka集群搭建" class="headerlink" title="Kafka集群搭建"></a>Kafka集群搭建</h2><p>注意：</p>
+<ul>
+<li>每一个Kafka的节点都需要修改broker.id（每个节点的标识，不能重复）</li>
+<li>log.dir数据存储目录需要配置</li>
+</ul>
+<h3 id="Kafka的生产者-消费者-工具"><a href="#Kafka的生产者-消费者-工具" class="headerlink" title="Kafka的生产者/消费者/工具"></a>Kafka的生产者/消费者/工具</h3><ul>
+<li>安装Kafka集群，可以测试以下<ul>
+<li>创建一个topic主题（消息都是存放在topic中，类似mysql建表的过程）</li>
+<li>基于kafka的内置测试生产者脚本来读取标准输入（键盘输入）的数据，并放入到topic中</li>
+<li>基于kafka的内置测试消费者脚本来消费topic中的数据</li>
+</ul>
+</li>
+<li>推荐大家开发的使用Kafka Tool<ul>
+<li>浏览Kafka集群节点、多少个topic、多少个分区</li>
+<li>创建topic/删除topic</li>
+<li>浏览ZooKeeper中的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="Kafka的基准测试工具"><a href="#Kafka的基准测试工具" class="headerlink" title="Kafka的基准测试工具"></a>Kafka的基准测试工具</h3><ul>
+<li><p>Kafka中提供了内置的性能测试工具</p>
+<ul>
+<li><p>生产者：测试生产每秒传输的数据量（多少条数据、多少M的数据）</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5000000 records sent, 11825.446943 records/sec (11.28 MB/sec), 2757.61 ms avg latency</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消费者：测试消费每条拉取的数据量</p>
+</li>
+</ul>
+</li>
+<li><p>对比生产者和消费者：消费者的速度更快</p>
+</li>
+</ul>
+<h2 id="Kafka-Java-API开发"><a href="#Kafka-Java-API开发" class="headerlink" title="Kafka Java API开发"></a>Kafka Java API开发</h2><h3 id="生产者程序开发"><a href="#生产者程序开发" class="headerlink" title="生产者程序开发"></a>生产者程序开发</h3><ol>
+<li>创建连接<ul>
+<li>bootstrap.servers：Kafka的服务器地址</li>
+<li>acks：表示当生产者生产数据到Kafka中，Kafka中会以什么样的策略返回</li>
+<li>key.serializer：Kafka中的消息是以key、value键值对存储的，而且生产者生产的消息是需要在网络上传到的，这里指定的是StringSerializer方式，就是以字符串方式发送（将来还可以使用其他的一些序列化框架：Google ProtoBuf、Avro）</li>
+<li>value.serializer：同上</li>
+</ul>
+</li>
+<li>创建一个生产者对象KafkaProducer</li>
+<li>调用send方法发送消息（ProducerRecor，封装是key-value键值对）</li>
+<li>调用Future.get表示等带服务端的响应</li>
+<li>关闭生产者</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KafkaProducerTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;</span><br><span class="line">        <span class="comment">// 1. 创建用于连接Kafka的Properties配置</span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">props</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        props.put(<span class="string">&quot;bootstrap.servers&quot;</span>, <span class="string">&quot;node1.itcast.cn:9092&quot;</span>);</span><br><span class="line">        props.put(<span class="string">&quot;acks&quot;</span>, <span class="string">&quot;all&quot;</span>);</span><br><span class="line">        props.put(<span class="string">&quot;key.serializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span>);</span><br><span class="line">        props.put(<span class="string">&quot;value.serializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 创建一个生产者对象KafkaProducer</span></span><br><span class="line">        KafkaProducer&lt;String, String&gt; kafkaProducer = <span class="keyword">new</span> <span class="title class_">KafkaProducer</span>&lt;&gt;(props);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 发送1-100的消息到指定的topic中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; ++i) &#123;</span><br><span class="line">            <span class="comment">// 构建一条消息，直接new ProducerRecord</span></span><br><span class="line">            ProducerRecord&lt;String, String&gt; producerRecord = <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(<span class="string">&quot;test&quot;</span>, <span class="literal">null</span>, i + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            Future&lt;RecordMetadata&gt; future = kafkaProducer.send(producerRecord);</span><br><span class="line">            <span class="comment">// 调用Future的get方法等待响应</span></span><br><span class="line">            future.get();</span><br><span class="line">            System.out.println(<span class="string">&quot;第&quot;</span> + i + <span class="string">&quot;条消息写入成功！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4.关闭生产者</span></span><br><span class="line">        kafkaProducer.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="消费者程序开发"><a href="#消费者程序开发" class="headerlink" title="消费者程序开发"></a>消费者程序开发</h3><ul>
+<li>group.id：消费者组的概念，可以在一个消费组中包含多个消费者。如果若干个消费者的group.id是一样的，表示它们就在一个组中，一个组中的消费者是共同消费Kafka中topic的数据。</li>
+<li>Kafka是一种拉消息模式的消息队列，在消费者中会有一个offset，表示从哪条消息开始拉取数据</li>
+<li>kafkaConsumer.poll：Kafka的消费者API是一批一批数据的拉取</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消费者程序</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 1.创建Kafka消费者配置</span></span><br><span class="line"><span class="comment"> * Properties props = new Properties();</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;bootstrap.servers&quot;, &quot;node1.itcast.cn:9092&quot;);</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;group.id&quot;, &quot;test&quot;);</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;enable.auto.commit&quot;, &quot;true&quot;);</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;auto.commit.interval.ms&quot;, &quot;1000&quot;);</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;key.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);</span></span><br><span class="line"><span class="comment"> * props.setProperty(&quot;value.deserializer&quot;, &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 2.创建Kafka消费者</span></span><br><span class="line"><span class="comment"> * 3.订阅要消费的主题</span></span><br><span class="line"><span class="comment"> * 4.使用一个while循环，不断从Kafka的topic中拉取消息</span></span><br><span class="line"><span class="comment"> * 5.将将记录（record）的offset、key、value都打印出来</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KafkaConsumerTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 1.创建Kafka消费者配置</span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">props</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        props.setProperty(<span class="string">&quot;bootstrap.servers&quot;</span>, <span class="string">&quot;node1.itcast.cn:9092&quot;</span>);</span><br><span class="line">        <span class="comment">// 消费者组（可以使用消费者组将若干个消费者组织到一起），共同消费Kafka中topic的数据</span></span><br><span class="line">        <span class="comment">// 每一个消费者需要指定一个消费者组，如果消费者的组名是一样的，表示这几个消费者是一个组中的</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;group.id&quot;</span>, <span class="string">&quot;test&quot;</span>);</span><br><span class="line">        <span class="comment">// 自动提交offset</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;enable.auto.commit&quot;</span>, <span class="string">&quot;true&quot;</span>);</span><br><span class="line">        <span class="comment">// 自动提交offset的时间间隔</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;auto.commit.interval.ms&quot;</span>, <span class="string">&quot;1000&quot;</span>);</span><br><span class="line">        <span class="comment">// 拉取的key、value数据的</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;key.deserializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span>);</span><br><span class="line">        props.setProperty(<span class="string">&quot;value.deserializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.创建Kafka消费者</span></span><br><span class="line">        KafkaConsumer&lt;String, String&gt; kafkaConsumer = <span class="keyword">new</span> <span class="title class_">KafkaConsumer</span>&lt;&gt;(props);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 订阅要消费的主题</span></span><br><span class="line">        <span class="comment">// 指定消费者从哪个topic中拉取数据</span></span><br><span class="line">        kafkaConsumer.subscribe(Arrays.asList(<span class="string">&quot;test&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4.使用一个while循环，不断从Kafka的topic中拉取消息</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">// Kafka的消费者一次拉取一批的数据</span></span><br><span class="line">            ConsumerRecords&lt;String, String&gt; consumerRecords = kafkaConsumer.poll(Duration.ofSeconds(<span class="number">5</span>));</span><br><span class="line">            <span class="comment">// 5.将将记录（record）的offset、key、value都打印出来</span></span><br><span class="line">            <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; consumerRecord : consumerRecords) &#123;</span><br><span class="line">                <span class="comment">// 主题</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> consumerRecord.topic();</span><br><span class="line">                <span class="comment">// offset：这条消息处于Kafka分区中的哪个位置</span></span><br><span class="line">                <span class="type">long</span> <span class="variable">offset</span> <span class="operator">=</span> consumerRecord.offset();</span><br><span class="line">                <span class="comment">// key\value</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> consumerRecord.key();</span><br><span class="line">                <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> consumerRecord.value();</span><br><span class="line"></span><br><span class="line">                System.out.println(<span class="string">&quot;topic: &quot;</span> + topic + <span class="string">&quot; offset:&quot;</span> + offset + <span class="string">&quot; key:&quot;</span> + key + <span class="string">&quot; value:&quot;</span> + value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生产者使用异步方式生产消息"><a href="#生产者使用异步方式生产消息" class="headerlink" title="生产者使用异步方式生产消息"></a>生产者使用异步方式生产消息</h3><ul>
+<li>使用匿名内部类实现Callback接口，该接口中表示Kafka服务器响应给客户端，会自动调用onCompletion方法<ul>
+<li>metadata：消息的元数据（属于哪个topic、属于哪个partition、对应的offset是什么）</li>
+<li>exception：这个对象Kafka生产消息封装了出现的异常，如果为null，表示发送成功，如果不为null，表示出现异常。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二、使用异步回调的方式发送消息</span></span><br><span class="line">ProducerRecord&lt;String, String&gt; producerRecord = <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(<span class="string">&quot;test&quot;</span>, <span class="literal">null</span>, i + <span class="string">&quot;&quot;</span>);</span><br><span class="line">kafkaProducer.send(producerRecord, <span class="keyword">new</span> <span class="title class_">Callback</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCompletion</span><span class="params">(RecordMetadata metadata, Exception exception)</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 判断发送消息是否成功</span></span><br><span class="line">        <span class="keyword">if</span>(exception == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 发送成功</span></span><br><span class="line">            <span class="comment">// 主题</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> metadata.topic();</span><br><span class="line">            <span class="comment">// 分区id</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">partition</span> <span class="operator">=</span> metadata.partition();</span><br><span class="line">            <span class="comment">// 偏移量</span></span><br><span class="line">            <span class="type">long</span> <span class="variable">offset</span> <span class="operator">=</span> metadata.offset();</span><br><span class="line">            System.out.println(<span class="string">&quot;topic:&quot;</span> + topic + <span class="string">&quot; 分区id：&quot;</span> + partition + <span class="string">&quot; 偏移量：&quot;</span> + offset);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 发送出现错误</span></span><br><span class="line">            System.out.println(<span class="string">&quot;生产消息出现异常！&quot;</span>);</span><br><span class="line">            <span class="comment">// 打印异常消息</span></span><br><span class="line">            System.out.println(exception.getMessage());</span><br><span class="line">            <span class="comment">// 打印调用栈</span></span><br><span class="line">            System.out.println(exception.getStackTrace());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Kafka中的重要概念"><a href="#Kafka中的重要概念" class="headerlink" title="Kafka中的重要概念"></a>Kafka中的重要概念</h2><ul>
+<li>broker<ul>
+<li>Kafka服务器进程，生产者、消费者都要连接broker</li>
+<li>一个集群由多个broker组成，功能实现Kafka集群的负载均衡、容错</li>
+</ul>
+</li>
+<li>producer：生产者</li>
+<li>consumer：消费者</li>
+<li>topic：主题，一个Kafka集群中，可以包含多个topic。一个topic可以包含多个分区<ul>
+<li>是一个逻辑结构，生产、消费消息都需要指定topic</li>
+</ul>
+</li>
+<li>partition：Kafka集群的分布式就是由分区来实现的。一个topic中的消息可以分布在topic中的不同partition中</li>
+<li>replica：副本，实现Kafkaf集群的容错，实现partition的容错。一个topic至少应该包含大于1个的副本</li>
+<li>consumer group：消费者组，一个消费者组中的消费者可以共同消费topic中的分区数据。每一个消费者组都一个唯一的名字。配置group.id一样的消费者是属于同一个组中</li>
+<li>offset：偏移量。相对消费者、partition来说，可以通过offset来拉取数据</li>
+</ul>
+<h3 id="消费者组"><a href="#消费者组" class="headerlink" title="消费者组"></a>消费者组</h3><ul>
+<li>一个消费者组中可以包含多个消费者，共同来消费topic中的数据</li>
+<li>一个topic中如果只有一个分区，那么这个分区只能被某个组中的一个消费者消费</li>
+<li>有多少个分区，那么就可以被同一个组内的多少个消费者消费</li>
+</ul>
+<h3 id="幂等性"><a href="#幂等性" class="headerlink" title="幂等性"></a>幂等性</h3><ul>
+<li><p>生产者消息重复问题</p>
+<ul>
+<li>Kafka生产者生产消息到partition，如果直接发送消息，kafka会将消息保存到分区中，但Kafka会返回一个ack给生产者，表示当前操作是否成功，是否已经保存了这条消息。如果ack响应的过程失败了，此时生产者会重试，继续发送没有发送成功的消息，Kafka又会保存一条一模一样的消息</li>
+</ul>
+</li>
+<li><p>在Kafka中可以开启幂等性</p>
+<ul>
+<li>当Kafka的生产者生产消息时，会增加一个pid（生产者的唯一编号）和sequence number（针对消息的一个递增序列）</li>
+<li>发送消息，会连着pid和sequence number一块发送</li>
+<li>kafka接收到消息，会将消息和pid、sequence number一并保存下来</li>
+<li>如果ack响应失败，生产者重试，再次发送消息时，Kafka会根据pid、sequence number是否需要再保存一条消息</li>
+<li>判断条件：生产者发送过来的sequence number 是否小于等于 partition中消息对应的sequence</li>
+</ul>
+</li>
+</ul>
+<h2 id="事务编程"><a href="#事务编程" class="headerlink" title="事务编程"></a>事务编程</h2><ul>
+<li><p>开启事务的条件</p>
+<ul>
+<li><p>生产者</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启事务必须要配置事务的ID</span></span><br><span class="line">props.put(<span class="string">&quot;transactional.id&quot;</span>, <span class="string">&quot;dwd_user&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消费者</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置事务的隔离级别</span></span><br><span class="line">props.put(<span class="string">&quot;isolation.level&quot;</span>,<span class="string">&quot;read_committed&quot;</span>);</span><br><span class="line"><span class="comment">// 关闭自动提交，一会我们需要手动来提交offset，通过事务来维护offset</span></span><br><span class="line">props.setProperty(<span class="string">&quot;enable.auto.commit&quot;</span>, <span class="string">&quot;false&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生产者</p>
+<ul>
+<li>初始化事务</li>
+<li>开启事务</li>
+<li>需要使用producer来将消费者的offset提交到事务中</li>
+<li>提交事务</li>
+<li>如果出现异常回滚事务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>如果使用了事务，不要使用异步发送</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TransactionProgram</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 调用之前实现的方法，创建消费者、生产者对象</span></span><br><span class="line">        KafkaConsumer&lt;String, String&gt; consumer = createConsumer();</span><br><span class="line">        KafkaProducer&lt;String, String&gt; producer = createProducer();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 生产者调用initTransactions初始化事务</span></span><br><span class="line">        producer.initTransactions();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 编写一个while死循环，在while循环中不断拉取数据，进行处理后，再写入到指定的topic</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// (1)	生产者开启事务</span></span><br><span class="line">                producer.beginTransaction();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 这个Map保存了topic对应的partition的偏移量</span></span><br><span class="line">                Map&lt;TopicPartition, OffsetAndMetadata&gt; offsetMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 从topic中拉取一批的数据</span></span><br><span class="line">                <span class="comment">// (2)	消费者拉取消息</span></span><br><span class="line">                ConsumerRecords&lt;String, String&gt; concumserRecordArray = consumer.poll(Duration.ofSeconds(<span class="number">5</span>));</span><br><span class="line">                <span class="comment">// (3)	遍历拉取到的消息，并进行预处理</span></span><br><span class="line">                <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; cr : concumserRecordArray) &#123;</span><br><span class="line">                    <span class="comment">// 将1转换为男，0转换为女</span></span><br><span class="line">                    <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> cr.value();</span><br><span class="line">                    String[] fieldArray = msg.split(<span class="string">&quot;,&quot;</span>);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 将消息的偏移量保存</span></span><br><span class="line">                    <span class="comment">// 消费的是ods_user中的数据</span></span><br><span class="line">                    <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> cr.topic();</span><br><span class="line">                    <span class="type">int</span> <span class="variable">partition</span> <span class="operator">=</span> cr.partition();</span><br><span class="line">                    <span class="type">long</span> <span class="variable">offset</span> <span class="operator">=</span> cr.offset();</span><br><span class="line"></span><br><span class="line">                	<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// offset + 1：offset是当前消费的记录（消息）对应在partition中的offset，而我们希望下一次能继续从下一个消息消息</span></span><br><span class="line">                    <span class="comment">// 必须要+1，从能消费下一条消息</span></span><br><span class="line">                    offsetMap.put(<span class="keyword">new</span> <span class="title class_">TopicPartition</span>(topic, partition), <span class="keyword">new</span> <span class="title class_">OffsetAndMetadata</span>(offset + <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 将字段进行替换</span></span><br><span class="line">                    <span class="keyword">if</span>(fieldArray != <span class="literal">null</span> &amp;&amp; fieldArray.length &gt; <span class="number">2</span>) &#123;</span><br><span class="line">                        <span class="type">String</span> <span class="variable">sexField</span> <span class="operator">=</span> fieldArray[<span class="number">1</span>];</span><br><span class="line">                        <span class="keyword">if</span>(sexField.equals(<span class="string">&quot;1&quot;</span>)) &#123;</span><br><span class="line">                            fieldArray[<span class="number">1</span>] = <span class="string">&quot;男&quot;</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(sexField.equals(<span class="string">&quot;0&quot;</span>))&#123;</span><br><span class="line">                            fieldArray[<span class="number">1</span>] = <span class="string">&quot;女&quot;</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 重新拼接字段</span></span><br><span class="line">                    msg = fieldArray[<span class="number">0</span>] + <span class="string">&quot;,&quot;</span> + fieldArray[<span class="number">1</span>] + <span class="string">&quot;,&quot;</span> + fieldArray[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// (4)	生产消息到dwd_user topic中</span></span><br><span class="line">                    ProducerRecord&lt;String, String&gt; dwdMsg = <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(<span class="string">&quot;dwd_user&quot;</span>, msg);</span><br><span class="line">                    <span class="comment">// 发送消息</span></span><br><span class="line">                    Future&lt;RecordMetadata&gt; future = producer.send(dwdMsg);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        future.get();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                        producer.abortTransaction();</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="comment">//                            new Callback()</span></span><br><span class="line"><span class="comment">//                    &#123;</span></span><br><span class="line"><span class="comment">//                        @Override</span></span><br><span class="line"><span class="comment">//                        public void onCompletion(RecordMetadata metadata, Exception exception) &#123;</span></span><br><span class="line"><span class="comment">//                            // 生产消息没有问题</span></span><br><span class="line"><span class="comment">//                            if(exception == null) &#123;</span></span><br><span class="line"><span class="comment">//                                System.out.println(&quot;发送成功:&quot; + dwdMsg);</span></span><br><span class="line"><span class="comment">//                            &#125;</span></span><br><span class="line"><span class="comment">//                            else &#123;</span></span><br><span class="line"><span class="comment">//                                System.out.println(&quot;生产消息失败:&quot;);</span></span><br><span class="line"><span class="comment">//                                System.out.println(exception.getMessage());</span></span><br><span class="line"><span class="comment">//                                System.out.println(exception.getStackTrace());</span></span><br><span class="line"><span class="comment">//                            &#125;</span></span><br><span class="line"><span class="comment">//                        &#125;</span></span><br><span class="line"><span class="comment">//                    &#125;);</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                producer.sendOffsetsToTransaction(offsetMap, <span class="string">&quot;ods_user&quot;</span>);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// (6)	提交事务</span></span><br><span class="line">                producer.commitTransaction();</span><br><span class="line">            &#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                <span class="comment">// (7)	捕获异常，如果出现异常，则取消事务</span></span><br><span class="line">                producer.abortTransaction();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 一、创建一个消费者来消费ods_user中的数据</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> KafkaConsumer&lt;String, String&gt; <span class="title function_">createConsumer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 配置消费者的属性（添加对事务的支持）</span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">props</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        props.setProperty(<span class="string">&quot;bootstrap.servers&quot;</span>, <span class="string">&quot;node1.itcast.cn:9092&quot;</span>);</span><br><span class="line">        props.setProperty(<span class="string">&quot;group.id&quot;</span>, <span class="string">&quot;ods_user&quot;</span>);</span><br><span class="line">        <span class="comment">// 配置事务的隔离级别</span></span><br><span class="line">        props.put(<span class="string">&quot;isolation.level&quot;</span>,<span class="string">&quot;read_committed&quot;</span>);</span><br><span class="line">        <span class="comment">// 关闭自动提交，一会我们需要手动来提交offset，通过事务来维护offset</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;enable.auto.commit&quot;</span>, <span class="string">&quot;false&quot;</span>);</span><br><span class="line">        <span class="comment">// 反序列化器</span></span><br><span class="line">        props.setProperty(<span class="string">&quot;key.deserializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span>);</span><br><span class="line">        props.setProperty(<span class="string">&quot;value.deserializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 构建消费者对象</span></span><br><span class="line">        KafkaConsumer&lt;String, String&gt; kafkaConsumer = <span class="keyword">new</span> <span class="title class_">KafkaConsumer</span>&lt;&gt;(props);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 订阅一个topic</span></span><br><span class="line">        kafkaConsumer.subscribe(Arrays.asList(<span class="string">&quot;ods_user&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> kafkaConsumer;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 二、编写createProducer方法，用来创建一个带有事务配置的生产者</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> KafkaProducer&lt;String, String&gt; <span class="title function_">createProducer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 配置生产者带有事务配置的属性</span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">props</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        props.put(<span class="string">&quot;bootstrap.servers&quot;</span>, <span class="string">&quot;node1.itcast.cn:9092&quot;</span>);</span><br><span class="line">        <span class="comment">// 开启事务必须要配置事务的ID</span></span><br><span class="line">        props.put(<span class="string">&quot;transactional.id&quot;</span>, <span class="string">&quot;dwd_user&quot;</span>);</span><br><span class="line">        props.put(<span class="string">&quot;key.serializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span>);</span><br><span class="line">        props.put(<span class="string">&quot;value.serializer&quot;</span>, <span class="string">&quot;org.apache.kafka.common.serialization.StringSerializer&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 构建生产者</span></span><br><span class="line">        KafkaProducer&lt;String, String&gt; kafkaProducer = <span class="keyword">new</span> <span class="title class_">KafkaProducer</span>&lt;&gt;(props);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> kafkaProducer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Kafka中的分区副本机制"><a href="#Kafka中的分区副本机制" class="headerlink" title="Kafka中的分区副本机制"></a>Kafka中的分区副本机制</h2><h3 id="生产者的分区写入策略"><a href="#生产者的分区写入策略" class="headerlink" title="生产者的分区写入策略"></a>生产者的分区写入策略</h3><ul>
+<li>轮询（按照消息尽量保证每个分区的负载）策略，消息会均匀地分布到每个partition<ul>
+<li>写入消息的时候，key为null的时候，默认使用的是轮询策略</li>
+</ul>
+</li>
+<li>随机策略（不使用）</li>
+<li>按key写入策略，key.hash() % 分区的数量</li>
+<li>自定义分区策略（类似于MapReduce指定分区）</li>
+</ul>
+<blockquote>
+<p>乱序问题</p>
+<ul>
+<li>在Kafka中生产者是有写入策略，如果topic有多个分区，就会将数据分散在不同的partition中存储</li>
+<li>当partition数量大于1的时候，数据（消息）会打散分布在不同的partition中</li>
+<li>如果只有一个分区，消息是有序的</li>
+</ul>
+</blockquote>
+<h3 id="消费组Consumer-Group-Rebalance机制"><a href="#消费组Consumer-Group-Rebalance机制" class="headerlink" title="消费组Consumer Group Rebalance机制"></a>消费组Consumer Group Rebalance机制</h3><ul>
+<li>再均衡：在某些情况下，消费者组中的消费者消费的分区会产生变化，会导致消费者分配不均匀（例如：有两个消费者消费3个，因为某个partition崩溃了，还有一个消费者当前没有分区要削峰），Kafka Consumer Group就会启用rebalance机制，重新平衡这个Consumer Group内的消费者消费的分区分配。</li>
+<li>触发时机<ul>
+<li>消费者数量发生变化<ul>
+<li>某个消费者crash</li>
+<li>新增消费者</li>
+</ul>
+</li>
+<li>topic的数量发生变化<ul>
+<li>某个topic被删除</li>
+</ul>
+</li>
+<li>partition的数量发生变化<ul>
+<li>删除partition</li>
+<li>新增partition</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不良影响<ul>
+<li>发生rebalance，所有的consumer将不再工作，共同来参与再均衡，直到每个消费者都已经被成功分配所需要消费的分区为止（rebalance结束）</li>
+</ul>
+</li>
+</ul>
+<h3 id="消费者的分区分配策略"><a href="#消费者的分区分配策略" class="headerlink" title="消费者的分区分配策略"></a>消费者的分区分配策略</h3><p>分区分配策略：保障每个消费者尽量能够均衡地消费分区的数据，不能出现某个消费者消费分区的数量特别多，某个消费者消费的分区特别少</p>
+<ul>
+<li>Range分配策略（范围分配策略）：Kafka默认的分配策略<ul>
+<li>n：分区的数量 / 消费者数量</li>
+<li>m：分区的数量 % 消费者数量</li>
+<li>前m个消费者消费n+1个分区</li>
+<li>剩余的消费者消费n个分区</li>
+</ul>
+</li>
+<li>RoundRobin分配策略（轮询分配策略）<ul>
+<li>消费者挨个分配消费的分区</li>
+</ul>
+</li>
+<li>Striky粘性分配策略<ul>
+<li>在没有发生rebalance跟轮询分配策略是一致的</li>
+<li>发生了rebalance，轮询分配策略，重新走一遍轮询分配的过程。而粘性会保证跟上一次的尽量一致，只是将新的需要分配的分区，均匀的分配到现有可用的消费者中即可</li>
+<li>减少上下文的切换</li>
+</ul>
+</li>
+</ul>
+<h3 id="副本的ACK机制"><a href="#副本的ACK机制" class="headerlink" title="副本的ACK机制"></a>副本的ACK机制</h3><p>producer是不断地往Kafka中写入数据，写入数据会有一个返回结果，表示是否写入成功。这里对应有一个ACKs的配置。</p>
+<ul>
+<li>acks = 0：生产者只管写入，不管是否写入成功，可能会数据丢失。性能是最好的</li>
+<li>acks = 1：生产者会等到leader分区写入成功后，返回成功，接着发送下一条</li>
+<li>acks = -1/all：确保消息写入到leader分区、还确保消息写入到对应副本都成功后，接着发送下一条，性能是最差的</li>
+</ul>
+<p>根据业务情况来选择ack机制，是要求性能最高，一部分数据丢失影响不大，可以选择0/1。如果要求数据一定不能丢失，就得配置为-1/all。</p>
+<p>分区中是有leader和follower的概念，为了确保消费者消费的数据是一致的，只能从分区leader去读写消息，follower做的事情就是同步数据，Backup。</p>
+<h3 id="高级API（High-Level-API）、低级API（Low-Level-API）"><a href="#高级API（High-Level-API）、低级API（Low-Level-API）" class="headerlink" title="高级API（High-Level API）、低级API（Low-Level API）"></a>高级API（High-Level API）、低级API（Low-Level API）</h3><ul>
+<li>高级API就是直接让Kafka帮助管理、处理分配、数据<ul>
+<li>offset存储在ZK中</li>
+<li>由kafka的rebalance来控制消费者分配的分区</li>
+<li>开发起来比较简单，无需开发者关注底层细节</li>
+<li>无法做到细粒度的控制</li>
+</ul>
+</li>
+<li>低级API：由编写的程序自己控制逻辑<ul>
+<li>自己来管理Offset，可以将offset存储在ZK、MySQL、Redis、HBase、Flink的状态存储</li>
+<li>指定消费者拉取某个分区的数据</li>
+<li>可以做到细粒度的控制</li>
+<li>原有的Kafka的策略会失效，需要我们自己来实现消费机制</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kafka原理"><a href="#Kafka原理" class="headerlink" title="Kafka原理"></a>Kafka原理</h2><h3 id="leader和follower"><a href="#leader和follower" class="headerlink" title="leader和follower"></a>leader和follower</h3><ul>
+<li>Kafka中的leader和follower是相对分区有意义，不是相对broker</li>
+<li>Kafka在创建topic的时候，会尽量分配分区的leader在不同的broker中，其实就是负载均衡</li>
+<li>leader职责：读写数据</li>
+<li>follower职责：同步数据、参与选举（leader crash之后，会选举一个follower重新成为分区的leader</li>
+<li>注意和ZooKeeper区分<ul>
+<li>ZK的leader负责读、写，follower可以读取</li>
+<li>Kafka的leader负责读写、follower不能读写数据（确保每个消费者消费的数据是一致的），Kafka一个topic有多个分区leader，一样可以实现数据操作的负载均衡</li>
+</ul>
+</li>
+</ul>
+<h3 id="AR-ISR-OSR"><a href="#AR-ISR-OSR" class="headerlink" title="AR\ISR\OSR"></a>AR\ISR\OSR</h3><ul>
+<li>AR表示一个topic下的所有副本</li>
+<li>ISR：In Sync Replicas，正在同步的副本（可以理解为当前有几个follower是存活的）</li>
+<li>OSR：Out of Sync Replicas，不再同步的副本</li>
+<li>AR = ISR + OSR</li>
+</ul>
+<h3 id="leader选举"><a href="#leader选举" class="headerlink" title="leader选举"></a>leader选举</h3><ul>
+<li>Controller：controller是kafka集群的老大，是针对Broker的一个角色<ul>
+<li>Controller是高可用的，是用过ZK来进行选举</li>
+</ul>
+</li>
+<li>Leader：是针对partition的一个角色<ul>
+<li>Leader是通过ISR来进行快速选举</li>
+</ul>
+</li>
+<li><p>如果Kafka是基于ZK来进行选举，ZK的压力可能会比较大。例如：某个节点崩溃，这个节点上不仅仅只有一个leader，是有不少的leader需要选举。通过ISR快速进行选举。</p>
+</li>
+<li><p>leader的负载均衡</p>
+<ul>
+<li>如果某个broker crash之后，就可能会导致partition的leader分布不均匀，就是一个broker上存在一个topic下不同partition的leader</li>
+<li><p>通过以下指令，可以将leader分配到优先的leader对应的broker，确保leader是均匀分配的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/kafka-leader-election.sh --bootstrap-server node1.itcast.cn:9092 --topic test --partition=2 --election-type preferred</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Kafka读写流程"><a href="#Kafka读写流程" class="headerlink" title="Kafka读写流程"></a>Kafka读写流程</h3><ul>
+<li>写流程<ul>
+<li>通过ZooKeeper找partition对应的leader，leader是负责写的</li>
+<li>producer开始写入数据</li>
+<li>ISR里面的follower开始同步数据，并返回给leader ACK</li>
+<li>返回给producer ACK</li>
+</ul>
+</li>
+<li>读流程<ul>
+<li>通过ZooKeeper找partition对应的leader，leader是负责读的</li>
+<li>通过ZooKeeper找到消费者对应的offset</li>
+<li>然后开始从offset往后顺序拉取数据</li>
+<li>提交offset（自动提交——每隔多少秒提交一次offset、手动提交——放入到事务中提交）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Kafka的物理存储"><a href="#Kafka的物理存储" class="headerlink" title="Kafka的物理存储"></a>Kafka的物理存储</h3><ul>
+<li>Kafka的数据组织结构<ul>
+<li>topic</li>
+<li>partition</li>
+<li>segment<ul>
+<li>.log数据文件</li>
+<li>.index（稀疏索引）</li>
+<li>.timeindex（根据时间做的索引）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>深入了解读数据的流程<ul>
+<li>消费者的offset是一个针对partition全局offset</li>
+<li>可以根据这个offset找到segment段</li>
+<li>接着需要将全局的offset转换成segment的局部offset</li>
+<li>根据局部的offset，就可以从（.index稀疏索引）找到对应的数据位置</li>
+<li>开始顺序读取</li>
+</ul>
+</li>
+</ul>
+<h3 id="消息传递的语义性"><a href="#消息传递的语义性" class="headerlink" title="消息传递的语义性"></a>消息传递的语义性</h3><p>Flink里面有对应的每种不同机制的保证，提供Exactly-Once保障（二阶段事务提交方式）</p>
+<ul>
+<li>At-most once：最多一次（只管把数据消费到，不管有没有成功，可能会有数据丢失）</li>
+<li>At-least once：最少一次（有可能会出现重复消费）</li>
+<li>Exactly-Once：仅有一次（事务性性的保障，保证消息有且仅被处理一次）</li>
+</ul>
+<h3 id="Kafka的消息不丢失"><a href="#Kafka的消息不丢失" class="headerlink" title="Kafka的消息不丢失"></a>Kafka的消息不丢失</h3><ul>
+<li>broker消息不丢失：因为有副本relicas的存在，会不断地从leader中同步副本，所以，一个broker crash，不会导致数据丢失，除非是只有一个副本。</li>
+<li>生产者消息不丢失：ACK机制（配置成ALL/-1）、配置0或者1有可能会存在丢失</li>
+<li>消费者消费不丢失：重点控制offset<ul>
+<li>At-least once：一种数据可能会重复消费</li>
+<li>Exactly-Once：仅被一次消费</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据积压"><a href="#数据积压" class="headerlink" title="数据积压"></a>数据积压</h3><ul>
+<li>数据积压指的是消费者因为有一些外部的IO、一些比较耗时的操作（Full GC——Stop the world），就会造成消息在partition中一直存在得不到消费，就会产生数据积压</li>
+<li>在企业中，我们要有监控系统，如果出现这种情况，需要尽快处理。虽然后续的Spark Streaming/Flink可以实现背压机制，但是数据累积太多一定对实时系统它的实时性是有说影响的</li>
+</ul>
+<h3 id="数据清理-amp-配额限速"><a href="#数据清理-amp-配额限速" class="headerlink" title="数据清理&amp;配额限速"></a>数据清理&amp;配额限速</h3><ul>
+<li>数据清理<ul>
+<li>Log Deletion（日志删除）：如果消息达到一定的条件（时间、日志大小、offset大小），Kafka就会自动将日志设置为待删除（segment端的后缀名会以 .delete结尾），日志管理程序会定期清理这些日志<ul>
+<li>默认是7天过期</li>
+</ul>
+</li>
+<li>Log Compaction（日志合并）<ul>
+<li>如果在一些key-value数据中，一个key可以对应多个不同版本的value</li>
+<li>经过日志合并，就会只保留最新的一个版本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>配额限速<ul>
+<li>可以限制Producer、Consumer的速率</li>
+<li>防止Kafka的速度过快，占用整个服务器（broker）的所有IO资源</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.jodio.cc">JO🥝</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.jodio.cc/posts/kafka.html">https://www.jodio.cc/posts/kafka.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.jodio.cc" target="_blank">JONI🥝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a><a class="post-meta__tags" href="/tags/kafka/">kafka</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/6f3e.html" title="代码可读性"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qz3dvd.23z5dyj0l3r4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">代码可读性</div></div></a></div><div><a href="/posts/b5e3.html" title="正则表达式"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/x6ewo3.ugbby3o3eqo.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">正则表达式</div></div></a></div><div><a href="/posts/git.html" title="Git使用"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l88jgq.3fkis9a1ni40.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-14</div><div class="title">Git使用</div></div></a></div><div><a href="/posts/JVM.html" title="Java虚拟机"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">Java虚拟机</div></div></a></div><div><a href="/posts/2529.html" title="Java并发编程"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/l8zo2l.651z4oj8p8k0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">Java并发编程</div></div></a></div><div><a href="/posts/8e2e.html" title="Java 容器"><img class="cover" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">Java 容器</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author_top is-center"><div class="card-info-avatar"><div class="avatar-img"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxwo2w.2yii0cfz5oc0.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>认真摸鱼中</span></div></div></div><div class="author-info__name">JO🥝</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/itcat-zxy"><i class="fab fa-github"></i><span>小黑屋<i class="faa-passing animated" style="padding-left:20px;display:inline-block;vertical-align:middle;"><svg class="icon" style="height:28px;width:28px;fill:currentColor;position:relative;top:5px"><use xlink:href="#icon-xiaoqiche"></use></svg></i></span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="/source/img/QRCode.jpg" target="_blank" title="微信"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-weixin"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://res.abeim.cn/api/qq/?qq=2642322081" target="_blank" title="QQ"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-QQ"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/220757832" target="_blank" title="B站"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a><a class="social-icon faa-parent animated-hover" href="mailto:2642322081@qq.com" target="_blank" title="QQ邮箱"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://leetcode.cn/u/fomalhaut1998" target="_blank" title="力扣"><svg class="social_icon faa-tada" aria-hidden="true"><use xlink:href="#icon-leetcode"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">itcat-blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Kafka-%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text">Kafka(一)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">Kafka简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.1.1.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">Kafka的应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">消息队列的两种模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-number">1.2.</span> <span class="toc-text">Kafka集群搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85-%E5%B7%A5%E5%85%B7"><span class="toc-number">1.2.1.</span> <span class="toc-text">Kafka的生产者&#x2F;消费者&#x2F;工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-number">1.2.2.</span> <span class="toc-text">Kafka的基准测试工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka-Java-API%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.</span> <span class="toc-text">Kafka Java API开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.1.</span> <span class="toc-text">生产者程序开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.2.</span> <span class="toc-text">消费者程序开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E4%BD%BF%E7%94%A8%E5%BC%82%E6%AD%A5%E6%96%B9%E5%BC%8F%E7%94%9F%E4%BA%A7%E6%B6%88%E6%81%AF"><span class="toc-number">1.3.3.</span> <span class="toc-text">生产者使用异步方式生产消息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="toc-number">1.4.</span> <span class="toc-text">Kafka中的重要概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E7%BB%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">消费者组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%82%E7%AD%89%E6%80%A7"><span class="toc-number">1.4.2.</span> <span class="toc-text">幂等性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%BC%96%E7%A8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">事务编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka%E4%B8%AD%E7%9A%84%E5%88%86%E5%8C%BA%E5%89%AF%E6%9C%AC%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.</span> <span class="toc-text">Kafka中的分区副本机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E7%9A%84%E5%88%86%E5%8C%BA%E5%86%99%E5%85%A5%E7%AD%96%E7%95%A5"><span class="toc-number">1.6.1.</span> <span class="toc-text">生产者的分区写入策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E7%BB%84Consumer-Group-Rebalance%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.2.</span> <span class="toc-text">消费组Consumer Group Rebalance机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E7%9A%84%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="toc-number">1.6.3.</span> <span class="toc-text">消费者的分区分配策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%AF%E6%9C%AC%E7%9A%84ACK%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.4.</span> <span class="toc-text">副本的ACK机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7API%EF%BC%88High-Level-API%EF%BC%89%E3%80%81%E4%BD%8E%E7%BA%A7API%EF%BC%88Low-Level-API%EF%BC%89"><span class="toc-number">1.6.5.</span> <span class="toc-text">高级API（High-Level API）、低级API（Low-Level API）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kafka%E5%8E%9F%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">Kafka原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#leader%E5%92%8Cfollower"><span class="toc-number">1.7.1.</span> <span class="toc-text">leader和follower</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AR-ISR-OSR"><span class="toc-number">1.7.2.</span> <span class="toc-text">AR\ISR\OSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#leader%E9%80%89%E4%B8%BE"><span class="toc-number">1.7.3.</span> <span class="toc-text">leader选举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E8%AF%BB%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">1.7.4.</span> <span class="toc-text">Kafka读写流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E7%89%A9%E7%90%86%E5%AD%98%E5%82%A8"><span class="toc-number">1.7.5.</span> <span class="toc-text">Kafka的物理存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E8%AF%AD%E4%B9%89%E6%80%A7"><span class="toc-number">1.7.6.</span> <span class="toc-text">消息传递的语义性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1"><span class="toc-number">1.7.7.</span> <span class="toc-text">Kafka的消息不丢失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%A7%AF%E5%8E%8B"><span class="toc-number">1.7.8.</span> <span class="toc-text">数据积压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E7%90%86-amp-%E9%85%8D%E9%A2%9D%E9%99%90%E9%80%9F"><span class="toc-number">1.7.9.</span> <span class="toc-text">数据清理&amp;配额限速</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/kafka.html" title="Kafka消息队列"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kafka消息队列"/></a><div class="content"><a class="title" href="/posts/kafka.html" title="Kafka消息队列">Kafka消息队列</a><time datetime="2023-04-20T20:11:12.000Z" title="发表于 2023-04-20 20:11:12">2023-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/shell.html" title="Shell编程"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gp8637.3p2hjipjeea0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shell编程"/></a><div class="content"><a class="title" href="/posts/shell.html" title="Shell编程">Shell编程</a><time datetime="2023-04-19T20:11:12.000Z" title="发表于 2023-04-19 20:11:12">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/spring.html" title="InterView(四) -- 微服务篇"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/3l9z69.5h1jrmmuc1g.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="InterView(四) -- 微服务篇"/></a><div class="content"><a class="title" href="/posts/spring.html" title="InterView(四) -- 微服务篇">InterView(四) -- 微服务篇</a><time datetime="2023-04-18T20:11:12.000Z" title="发表于 2023-04-18 20:11:12">2023-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/new_frame.html" title="InterView(三) -- 框架篇"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/7p2r6y.66fb0z37jyw0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="InterView(三) -- 框架篇"/></a><div class="content"><a class="title" href="/posts/new_frame.html" title="InterView(三) -- 框架篇">InterView(三) -- 框架篇</a><time datetime="2023-04-18T20:11:12.000Z" title="发表于 2023-04-18 20:11:12">2023-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/new_mysql.html" title="InterView(二) -- Mysql篇"><img src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/zypzdj.2vhaxl3kf6g0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="InterView(二) -- Mysql篇"/></a><div class="content"><a class="title" href="/posts/new_mysql.html" title="InterView(二) -- Mysql篇">InterView(二) -- Mysql篇</a><time datetime="2023-04-18T20:11:12.000Z" title="发表于 2023-04-18 20:11:12">2023-04-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By JO🥝</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://www.jodio.cc/posts/kafka.html'
+    this.page.identifier = '/posts/kafka.html'
+    this.page.title = 'Kafka消息队列'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js"></script><script async src="/js/title.js"></script><script defer src="/js/cursor.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script defer src="/js/f12.js"></script><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script async src="/js/console.js"></script><script async src="/js/fps.js"></script><script async data-pjax src="/js/anzhiyu.js"></script><script async data-pjax src="/js/anzhiyufunction.js"></script><script async src="/js/anzhiyuOnlyOne.js"></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="/js/rightmenu.js"></script><script src="/js/sun_moon.js" async></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script defer src="/js/lunar.js"></script><script defer src="/js/day.js"></script><script async data-pjax src="/js/music.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://github.com/itcat-zxy/itcat-zxy.github.io/tree/main/source/js/meting_js.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:randomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:switchNightMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="/personal/about/"><i class="fa fa-info-circle"></i><span>关于博客</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-cog"></i><span>美化设置</span></a><a class="rightMenu-item" href="javascript:rmf.fullScreen();"><i class="fas fa-expand"></i><span>切换全屏</span></a><a class="rightMenu-item" href="javascript:window.print();"><i class="fa-solid fa-print"></i><span>打印页面</span></a></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxep8y.51prnepydps0.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">19</span><span class="categoryBar-list-descr">JAVA</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/we8xr7.67bb205ywys0.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/git/&quot;);" href="javascript:void(0);">git</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">剑指Offer</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/wallhaven-o59rep.5ituv3vx8mw0.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JVM/&quot;);" href="javascript:void(0);">JVM</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">Blog</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/redis/&quot;);" href="javascript:void(0);">redis</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">个人日记</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/jxwo2w.2yii0cfz5oc0.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/shell/&quot;);" href="javascript:void(0);">shell</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">杂谈教程</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Typora/&quot;);" href="javascript:void(0);">Typora</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/pdf/&quot;);" href="javascript:void(0);">pdf</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java-frame/&quot;);" href="javascript:void(0);">Java , frame</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/mysql/&quot;);" href="javascript:void(0);">mysql</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '104.053443,30.588871';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://github.com/itcat-zxy/itcat-zxy.github.io/blob/main/source/js/runtime.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/summary.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/ex8rgr.40uro7fkoug0.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/summary.html&quot;);" href="javascript:void(0);" alt="">项目总结</a><div class="blog-slider__text">学成在线-项目总结</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/summary.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/DevOps.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gp88dq.6ihtt0wko0o0.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/DevOps.html&quot;);" href="javascript:void(0);" alt="">学成在线-项目部署</a><div class="blog-slider__text">项目部署</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/DevOps.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/offer.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o59vo5.41whal552ko0.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/offer.html&quot;);" href="javascript:void(0);" alt="">剑指Offer 部分编程题</a><div class="blog-slider__text">数据结构与算法</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/offer.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://python-github-calendar-api-spk83h666-anzhiyu-c.vercel.app/api?anzhiyu-c",['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'],'anzhiyu-c')
+    }
+  </script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
