@@ -32,7 +32,6 @@ top_img:
 
 ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093856262.png)
 
-
 * 系统解耦
 	* 原先一个微服务是通过接口（HTTP）调用另一个微服务，这时候耦合很严重，只要接口发生变化就会导致系统不可用
 	* 使用消息队列可以将系统进行解耦合，现在第一个微服务可以将消息放入到消息队列中，另一个微服务可以从消息队列中把消息取出来进行处理。进行系统解耦
@@ -48,7 +47,6 @@ top_img:
 	* 可以使用消息队列作为临时存储，或者一种通信管道
 
 ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093933994.png)
-
 
 ### 消息队列的两种模型
 
