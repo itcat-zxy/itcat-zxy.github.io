@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.jodio.cc/posts/sql.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/shell.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
@@ -65,10 +69,6 @@
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/sql.html</loc>
-    <lastmod>2023-04-20</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
@@ -94,6 +94,10 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    <lastmod>2023-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
