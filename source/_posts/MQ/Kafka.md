@@ -30,23 +30,24 @@ top_img:
 	* 可以将一些比较耗时的操作放在其他系统中，通过消息队列将需要进行处理的消息进行存储，其他系统可以消费消息队列中的数据
 	* 比较常见的：发送短信验证码、发送邮件
 
-![image-20200916093856262]([image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper)/image-20200916093856262.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093856262.png)
+
 
 * 系统解耦
 	* 原先一个微服务是通过接口（HTTP）调用另一个微服务，这时候耦合很严重，只要接口发生变化就会导致系统不可用
 	* 使用消息队列可以将系统进行解耦合，现在第一个微服务可以将消息放入到消息队列中，另一个微服务可以从消息队列中把消息取出来进行处理。进行系统解耦
 
-![image-20200916093908261]([image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper)/image-20200916093908261.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093908261.png)
 
 * 流量削峰
 	* 因为消息队列是低延迟、高可靠、高吞吐的，可以应对大量并发
 
-![image-20200916093919754]([image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper)/image-20200916093919754.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093919754.png)
 
 * 日志处理
 	* 可以使用消息队列作为临时存储，或者一种通信管道
 
-![image-20200916093933994]([image](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper)/image-20200916093933994.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/image-20200916093933994.png)
 
 
 ### 消息队列的两种模型
