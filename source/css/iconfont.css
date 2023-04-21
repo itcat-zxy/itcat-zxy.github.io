@@ -6,35 +6,41 @@
 }
 
 .iconfont {
-  font-family: "iconfont\"limportant;
+  font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
   
-.icon-QQ1:before {
-content: "\e610\";
-}
-  
 .icon-csdn:before {
-content: "\e600\";
+  content: "\e600";
+  font-size: 24px;
+  color: #CE000d;
 }
   
 .icon-QQ:before{
-content: "\e667\";
+  content: "\e667";
+  font-size: 24px;
+  color: #1296DB;
 }
   
-.icon-weibo1:before [
-content: "\e666\";
+.icon-weibo1:before {
+  content: "\e666";
+  font-size: 24px;
+  color: #E71F19;
 }
   
 .icon-weixin:before {
-content: "\e665\";
+  content: "\e665";
+  font-size: 24px;
+  color: #09BB07;  
 }
   
 .icon-bilibili:before {
-content: "\e619\";
+  content: "\e619";
+  font-size: 24px;
+  color: #1296DB;
 }
   
   
