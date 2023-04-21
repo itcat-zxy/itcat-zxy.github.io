@@ -6,7 +6,7 @@ tags:
 category: javaScript
 keywords: 'Java,javaScript'
 description: 学习前端 javaScript的基础知识
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o5g125.2cqq5x9es90k.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/5gz3m1.3hn5o4vmjyw0.jpg'
 abbrlink: javaScript
 date: 2023-04-21 20:11:12
 top_img:
@@ -774,7 +774,7 @@ console.log(num)
 
 ### 运算符优先级
 
- ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671016521031.png)
+ ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671016521031.jpg)
 
 > 逻辑运算符优先级： ！> && >  ||  
 
@@ -782,7 +782,7 @@ console.log(num)
 
 ### 表达式和语句
 
-![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671017924981.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671017924981.jpg)
 
 
 
@@ -1128,7 +1128,7 @@ for (; ;) {
 
 
 
-![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671018781557.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1671018781557.jpg)
 
 
 
