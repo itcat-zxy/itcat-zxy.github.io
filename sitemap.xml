@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
     
     <lastmod>2023-04-21</lastmod>
     
@@ -129,6 +129,24 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/summary.html</loc>
+    
+    <lastmod>2023-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
+    
+    <lastmod>2023-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
     
     <lastmod>2023-04-21</lastmod>
     
@@ -245,6 +263,15 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    
+    <lastmod>2023-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/os.html</loc>
     
     <lastmod>2023-04-21</lastmod>
@@ -290,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/javaScript.html</loc>
+    <loc>https://www.jodio.cc/posts/javaScript_two.html</loc>
     
     <lastmod>2023-04-21</lastmod>
     
@@ -317,34 +344,16 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/javaScript.html</loc>
+    
+    <lastmod>2023-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
-    
-    <lastmod>2023-04-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    
-    <lastmod>2023-04-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    
-    <lastmod>2023-04-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     
     <lastmod>2023-04-21</lastmod>
     
