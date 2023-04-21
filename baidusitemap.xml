@@ -21,14 +21,6 @@
     <lastmod>2023-04-21</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
-    <lastmod>2023-04-21</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
-    <lastmod>2023-04-21</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/netty.html</loc>
     <lastmod>2023-04-21</lastmod>
   </url>
@@ -105,6 +97,10 @@
     <lastmod>2023-04-21</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    <lastmod>2023-04-21</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/os.html</loc>
     <lastmod>2023-04-21</lastmod>
   </url>
@@ -137,7 +133,11 @@
     <lastmod>2023-04-21</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <lastmod>2023-04-21</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
     <lastmod>2023-04-21</lastmod>
   </url>
 </urlset> 
