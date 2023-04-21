@@ -941,11 +941,14 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+  
+    # 社交图标social样式
+    - <link rel="stylesheet" href="/css/iconfont.css">
     # 星空特效
     - <link rel="stylesheet" href="/css/universe.css">
-     # 自定义CSS
+    # 自定义CSS
     - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
-     # 顶部小进度条
+    # 顶部小进度条
     - <script data-pjax src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script>
     # custom.css样式：  鼠标魔改
     - <link rel="stylesheet" href="/css/custom.css">
