@@ -98,11 +98,11 @@ top_img:
 
 利用循环的知识来对比一个简单的天文知识，我们知道地球在自转的同时也在围绕太阳公转，如果把自转和公转都看成是循环的话，就相当于是循环中又嵌套了另一个循环。
 
-![universe](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/universe.gif)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/universe.gif)
 
 实际上 JavaScript 中任何一种循环语句都支持循环的嵌套，如下代码所示：
 
-![64791826139](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918261399.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918261399.jpg)
 
 ```html
 // 1. 外面的循环 记录第n天 
@@ -130,7 +130,7 @@ for (let i = 1; i <= 5; i++) {
 }
 ~~~
 
- ![64791867895](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918678956.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918678956.jpg)
 
 #### 九九乘法表
 
@@ -167,7 +167,7 @@ for (let i = 1; i <= 9; i++) {
 }
 ~~~
 
-![64791873467](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918734677.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1647918734677.jpg)
 
 ## 数组
 
