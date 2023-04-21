@@ -41,19 +41,23 @@ copy:
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
+# social:
+#   # 微信: source/img/QRCode.jpg || icon-weixin || faa-tada
+#   微信: img/QRCode.jpg || icon-weixin || faa-tada
+#   QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-QQ || faa-tada
+#   # B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
+#   QQ邮箱: mailto:itcat-zxy@outlook.com || icon-youxiang || faa-tada
+#   # 力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
+  
 social:
-  # 微信: source/img/QRCode.jpg || icon-weixin || faa-tada
-  微信: img/QRCode.jpg || icon-weixin || faa-tada
-  QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-QQ || faa-tada
-  # B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
-  QQ邮箱: mailto:itcat-zxy@outlook.com || icon-youxiang || faa-tada
-  # 力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
+   # fas fa-envelope: mailto:719603766@qq.com || Email
+#    iconfont icon-csdn: https://blog.csdn.net/weixin_50980814?spm=1000.2115.3001.5343 || CSDN
+   iconfont icon-QQ: /img/qq.jpg || QQ
+#    iconfont icon-weibo1: https://weibo.com/u/6295811698 || 微博
+   iconfont icon-weixin: /img/QRCode.jpg  || 微信
+#    iconfont icon-bilibili: https://space.bilibili.com/294857924 ||哔哩哔哩  
   
-#social:
-#  fab fa-github: https://github.com/xxxxx || Github
-#  fas fa-envelope: mailto:itcat-zxy@.com || Email
-  
-  
+
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
