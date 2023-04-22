@@ -1,12 +1,12 @@
 ---
-title: JavaScript 基础(二)
+title: Html基础
 tags:
   - java
   - html
 category: html
 keywords: 'Java,html'
-description: 学习前端 javaScript的基础知识
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qzroeq.5fa8xe3e1ek0.jpg'
+description: 学习前端 html基础
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/k7o551.5o8wx899xvg0.jpg'
 abbrlink: html_base
 date: 2023-04-22 20:11:12
 top_img:
