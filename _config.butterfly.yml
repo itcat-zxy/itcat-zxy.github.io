@@ -933,7 +933,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-  
+    # 引入自己的 iconfont图标地址
+    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4032168_lxs2b6jrx2k.css" media="defer" onload="this.media='all'">
     # 星空特效
     - <link rel="stylesheet" href="/css/universe.css">
     # 自定义CSS
@@ -959,6 +960,9 @@ inject:
     # 飞只因太美
     # - <link rel="stylesheet" href="https://npm.elemecdn.com/ethan4116-blog/lib/css/plane_v2.css">
   bottom:
+  
+    # 引入自己的 iconfont图标地址
+    - <script async src="//at.alicdn.com/t/c/font_4032168_lxs2b6jrx2k.css"></script> 
     # 引入aplayer插件
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     - <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
