@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.jodio.cc/posts/summary.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/offer.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
@@ -29,6 +33,10 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/javaScript_two.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/jquery.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
@@ -37,15 +45,11 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
+    <loc>https://www.jodio.cc/posts/kafka.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -54,14 +58,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/netty.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/spring.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -77,11 +73,19 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/DevOps.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/summary.html</loc>
+    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/spring.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -133,10 +137,6 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
@@ -157,7 +157,7 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/javaScript_two.html</loc>
+    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
 </urlset> 
