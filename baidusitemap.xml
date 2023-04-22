@@ -5,11 +5,11 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/sql.html</loc>
+    <loc>https://www.jodio.cc/posts/shell.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/shell.html</loc>
+    <loc>https://www.jodio.cc/posts/sql.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -18,6 +18,18 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/pdf.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -93,6 +105,10 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/os.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
@@ -105,11 +121,15 @@
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
+    <lastmod>2023-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
+    <loc>https://www.jodio.cc/posts/box_flex.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
   <url>
@@ -130,22 +150,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    <lastmod>2023-04-22</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-04-22</lastmod>
   </url>
 </urlset> 
