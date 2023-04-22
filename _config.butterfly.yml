@@ -940,8 +940,6 @@ css_prefix: true
 inject:
   head:
   
-    # 社交图标social样式
-    - <link rel="stylesheet" href="/css/iconfont.css">
     # 星空特效
     - <link rel="stylesheet" href="/css/universe.css">
     # 自定义CSS
