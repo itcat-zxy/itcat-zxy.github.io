@@ -49,15 +49,20 @@ copy:
 #   QQ邮箱: mailto:itcat-zxy@outlook.com || icon-youxiang || faa-tada
 #   # 力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
   
-social:
+# social:
    # fas fa-envelope: mailto:719603766@qq.com || Email
 #    iconfont icon-csdn: https://blog.csdn.net/weixin_50980814?spm=1000.2115.3001.5343 || CSDN
-   iconfont icon-QQ: /img/qq.jpg || QQ
+#    iconfont icon-QQ: /img/qq.jpg || QQ
 #    iconfont icon-weibo1: https://weibo.com/u/6295811698 || 微博
-   iconfont icon-weixin: /img/QRCode.jpg  || 微信
+#    iconfont icon-weixin: /img/QRCode.jpg  || 微信
 #    iconfont icon-bilibili: https://space.bilibili.com/294857924 ||哔哩哔哩  
-  
 
+
+social:
+   #fab fa-github: https://github.com/xxx || Github
+   fas fa-envelope: mailto:itcat-zxy@outlook.com || Email
+   fab fa-qq: http://wpa.qq.com/msgrd?v=3&uin=2642322081&site=qq&menu=yes || QQ  
+   fab fa-weixin: img/QRCode.jpg || 微信
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -724,7 +729,7 @@ aside:
       link: https://github.com/itcat-zxy
   card_announcement:
     enable: true
-    content: itcat-blog
+    content: itcat-blog 知识汇总
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
