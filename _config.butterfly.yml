@@ -42,7 +42,6 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  # 微信: source/img/QRCode.jpg || icon-weixin || faa-tada
   微信: img/QRCode.jpg || icon-weixin || faa-tada
   QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-qq || faa-tada
   # B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
@@ -50,11 +49,6 @@ social:
   # 力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
   
 
-# social:
-#    #fab fa-github: https://github.com/xxx || Github
-#    fas fa-envelope: mailto:itcat-zxy@outlook.com || Email
-#    fab fa-qq: http://wpa.qq.com/msgrd?v=3&uin=2642322081&site=qq&menu=yes || QQ  
-#    fab fa-weixin: img/QRCode.jpg || 微信
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
