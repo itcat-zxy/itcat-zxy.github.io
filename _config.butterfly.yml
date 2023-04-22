@@ -43,7 +43,7 @@ copy:
 #   icon: link || the description
 social:
   微信: img/QRCode.jpg || icon-weixin || faa-tada
-  QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-qq || faa-tada
+  QQ: https://res.abeim.cn/api/qq/?qq=2642322081 || icon-QQ || faa-tada
   # B站: https://space.bilibili.com/220757832 || icon-bilibili || faa-tada
   QQ邮箱: mailto:2642322081@qq.com || icon-youxiang || faa-tada
   # 力扣: https://leetcode.cn/u/fomalhaut1998 || icon-leetcode || faa-tada
