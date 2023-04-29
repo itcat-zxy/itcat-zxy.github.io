@@ -147,12 +147,11 @@ top_img:
 ```
 
 > 经验：通配符选择器可以用于**清除标签的默认样式**，例如：标签默认的外边距、内边距。
-
-![1680317584651](assets/1680317584651.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680317584651.jpg)
 
 ## 04-盒子尺寸和背景色
 
-![1680317605797](assets/1680317605797.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680317605797.jpg)
 
 ## 05-文字控制属性
 
@@ -199,7 +198,7 @@ line-height: 30px;
 line-height: 2;
 ```
 
-![1680317770048](assets/1680317770048.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680317770048.jpg)
 
 > 行高的测量方法：从一行文字的最顶端（最底端）量到下一行文字的最顶端（最底端）。 
 
@@ -233,7 +232,7 @@ font-family: 楷体;
 >
 > *  font-family 属性最后设置一个字体族名，网页开发建议使用无衬线字体
 
-![1680318278244](assets/1680318278244.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318278244.jpg)
 
 ```css
 font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
@@ -243,7 +242,7 @@ font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\
 
 使用场景：设置网页文字公共样式 
 
-![1680318326214](assets/1680318326214.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318326214.jpg)
 
 复合属性：属性的简写方式，**一个属性对应多个值的写法**，各个属性值之间用**空格**隔开。
 
@@ -278,7 +277,7 @@ p {
 
 属性名：**text-align**
 
-![1680318461130](assets/1680318461130.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318461130.jpg)
 
 ```css
 text-align: center;
@@ -302,13 +301,13 @@ text-align: center;
 
 属性名： **text-decoration** 
 
-![1680318548558](assets/1680318548558.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318548558.jpg)
 
 
 
 ### color 文字颜色
 
-![1680318569852](assets/1680318569852.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318569852.jpg)
 
 > 提示：只要属性值为颜色，都可以使用上述四种颜色表示方式，例如：背景色。 
 
@@ -323,7 +322,7 @@ text-align: center;
 
 2. 使用调试工具
 
-![1680318624523](assets/1680318624523.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318624523.jpg)
 
 ## 07-综合案例一-新闻详情
 
@@ -332,7 +331,7 @@ text-align: center;
 1. 从上到下，先整体再局部
 2. 先标签，再 CSS 美化
 
-![1680318667113](assets/1680318667113.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318667113.jpg)
 
 ### HTML标签
 
@@ -382,7 +381,7 @@ text-align: center;
 
 ## 08-综合案例二-CSS简介
 
-![1680318751246](assets/1680318751246.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680318751246.jpg)
 
 ### HTML标签
 
@@ -539,7 +538,7 @@ text-align: center;
 
 #### 超链接伪类
 
-![1680319272736](assets/1680319272736.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319272736.jpg)
 
 > 提示：如果要给超链接设置以上四个状态，需要按 LVHA 的顺序书写。 
 >
@@ -567,7 +566,7 @@ CSS特性：化简代码 / 定位问题，并解决问题
 
 继承性：子级默认继承父级的**文字控制属性**。 
 
-![1680319376438](assets/1680319376438.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319376438.jpg)
 
 > 注意：如果标签有默认文字样式会继承失败。 例如：a 标签的颜色、标题的字体大小。
 
@@ -626,7 +625,7 @@ CSS特性：化简代码 / 定位问题，并解决问题
 
 公式：（每一级之间不存在进位）
 
-![1680319646205](assets/1680319646205.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319646205.jpg)
 
 规则：
 
@@ -640,15 +639,15 @@ Emmet写法：代码的**简写**方式，输入缩写 VS Code 会自动生成�
 
 * HTML标签
 
-![1680319897697](assets/1680319897697.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319897697.jpg)
 
 * CSS：大多数简写方式为属性单词的**首字母** 
 
-![1680319926111](assets/1680319926111.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319926111.jpg)
 
 ## 04-背景属性
 
-![1680319971861](assets/1680319971861.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680319971861.jpg)
 
 ### 背景图
 
@@ -672,7 +671,7 @@ div {
 
 属性名：**background-repeat**（bgr） 
 
-![1680320072292](assets/1680320072292.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320072292.jpg)
 
 ```css
 div {
@@ -693,7 +692,7 @@ div {
 
 * 关键字
 
-![1680320211424](assets/1680320211424.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320211424.jpg)
 
 * 坐标
   * 水平：正数向右；负数向左
@@ -783,7 +782,7 @@ div {
 
 显示模式：标签（元素）的显示方式。 
 
-![1680320464551](assets/1680320464551.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320464551.jpg)
 
 作用：布局网页的时候，根据标签的显示模式选择合适的标签摆放内容。 
 
@@ -795,7 +794,7 @@ div {
 * 宽度默认是父级的100%
 * 添加宽高属性生效
 
-![1680320578369](assets/1680320578369.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320578369.jpg)
 
 ### 行内元素
 
@@ -805,7 +804,7 @@ div {
 * 设置宽高属性不生效
 * 宽高尺寸由内容撑开
 
-![1680320583985](assets/1680320583985.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320583985.jpg)
 
 ### 行内块元素 
 
@@ -815,19 +814,19 @@ div {
 * 设置宽高属性生效
 * 宽高尺寸也可以由内容撑开
 
-![1680320590005](assets/1680320590005.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320590005.jpg)
 
 ### 转换显示模式
 
 属性：**display**
 
-![1680320613034](assets/1680320613034.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320613034.jpg)
 
 
 
 ## 06-综合案例一-热词
 
-![1680320664821](assets/1680320664821.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320664821.jpg)
 
 ### HTML标签
 
@@ -865,7 +864,7 @@ background-color: #608dd9;
 
 ## 07-综合案例二 – banner 效果 
 
-![1680320758496](assets/1680320758496.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680320758496.jpg)
 
 ### HTML标签
 
@@ -991,7 +990,7 @@ div {
 
 ### 定位居中
 
-![1680340142857](assets/1680340142857.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340142857.jpg)
 
 实现步骤：
 
@@ -1040,7 +1039,7 @@ div {
 
 ### 堆叠层级z-index
 
-![1680340281795](assets/1680340281795.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340281795.jpg)
 
 默认效果：按照标签书写顺序，后来者居上
 
@@ -1072,11 +1071,11 @@ div {
 
 CSS 精灵，也叫 **CSS Sprites**，是一种网页**图片应用处理方式**。把网页中**一些背景图片**整合到**一张图片**文件中，再**background-position** 精确的定位出背景图片的位置。
 
-![1680340401800](assets/1680340401800.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340401800.jpg)
 
 优点：减少服务器被请求次数，减轻服务器的压力，提高页面加载速度
 
-![1680340411600](assets/1680340411600.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340411600.jpg)
 
 实现步骤：
 
@@ -1090,7 +1089,7 @@ CSS 精灵，也叫 **CSS Sprites**，是一种网页**图片应用处理方式*
 
 ### 案例-京东服务
 
-![1680340481861](assets/1680340481861.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340481861.jpg)
 
 #### HTML结构
 
@@ -1181,7 +1180,7 @@ CSS 精灵，也叫 **CSS Sprites**，是一种网页**图片应用处理方式*
 
 ### 字体图标
 
-![1680340562425](assets/1680340562425.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340562425.jpg)
 
 字体图标：**展示的是图标，本质是字体**
 
@@ -1200,25 +1199,25 @@ iconfont 图标库：<https://www.iconfont.cn/>
 
 登录 → 素材库 → 官方图标库 → 进入图标库 → 选图标，加入购物车 → 购物车，添加至项目，确定 → 下载至本地 
 
-![1680340665988](assets/1680340665988.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340665988.jpg)
 
 #### 使用字体
 
 1. 引入字体样式表（iconfont.css） 
 
-![1680340697011](assets/1680340697011.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340697011.jpg)
 
 2. 标签使用字体图标类名
    * iconfont：字体图标基本样式（字体名，字体大小等等）
    * icon-xxx：图标对应的类名
 
-![1680340718890](assets/1680340718890.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340718890.jpg)
 
 #### 上传矢量图
 
 作用：项目特有的图标上传到 iconfont 图标库，生成字体
 
-![1680340775611](assets/1680340775611.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340775611.jpg)
 
 上传步骤：上传 → 上传图标 → 选择 svg 矢量图，打开 → 提交 → 系统审核
 
@@ -1226,11 +1225,11 @@ iconfont 图标库：<https://www.iconfont.cn/>
 
 ### 垂直对齐方式 
 
-![1680340838945](assets/1680340838945.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340838945.jpg)
 
 属性名：vertical-align
 
-![1680340829633](assets/1680340829633.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680340829633.jpg)
 
 ### 过渡
 
@@ -1277,11 +1276,11 @@ img:hover {
 
 属性名：cursor
 
-![1680342344485](assets/1680342344485.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680342344485.jpg)
 
 ## 04-综合案例-轮播图
 
-![1680342362855](assets/1680342362855.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680342362855.jpg)
 
 ### 图片效果
 
