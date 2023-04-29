@@ -69,7 +69,7 @@ mkdir  zkdata
 vim /opt/zooKeeper/apache-zooKeeper-3.5.6-bin/conf/zoo.cfg
 ```
 
-![1577548250377](images\1577548250377.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper\1577548250377.jpg)
 
 修改存储目录：dataDir=/opt/zookeeper/zkdata
 
@@ -81,7 +81,7 @@ cd /opt/zooKeeper/apache-zooKeeper-3.5.6-bin/bin/
  ./zkServer.sh  start
 ```
 
-![1577548052037](images\1577548052037.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper\1577548052037.jpg)
 
 看到上图表示ZooKeeper成功启动
 
@@ -93,14 +93,17 @@ cd /opt/zooKeeper/apache-zooKeeper-3.5.6-bin/bin/
 
 zookeeper启动成功。standalone代表zk没有搭建集群，现在是单节点
 
-![1577548175232](images\1577548175232.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper\1577548175232.jpg)
 
 zookeeper没有启动
 
-![1577548112773](images\1577548112773.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper\1577548112773.jpg)
 
 
 
+
+## Zookeeper 分布式锁 
+[Curator实现分布式锁](https://github.com/itcat-zxy/curator-zk)
 
 
 ## **搭建Zookeeper集群**
@@ -228,7 +231,7 @@ server.3=192.168.149.135:2883:3883
 
 
 
-![img](images/wps11.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps11.jpg) 
 
 启动后我们查询一下每个实例的运行状态
 
@@ -242,17 +245,17 @@ server.3=192.168.149.135:2883:3883
 
 先查询第一个服务
 
-![img](images\wps12.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps12.jpg) 
 
 Mode为follower表示是**跟随者**（从）
 
 再查询第二个服务Mod 为leader表示是**领导者**（主）
 
-![img](images/\wps13.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps13.jpg) 
 
 查询第三个为跟随者（从）
 
-![img](images/\wps14.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps14.jpg) 
 
 ### **1.5 模拟集群异常**
 
@@ -267,7 +270,7 @@ Mode为follower表示是**跟随者**（从）
 /usr/local/zookeeper-cluster/zookeeper-2/bin/zkServer.sh status
 ```
 
-![img](images/\wps15.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps15.jpg) 
 
 由此得出结论，3个节点的集群，从服务器挂掉，集群正常
 
@@ -281,7 +284,7 @@ Mode为follower表示是**跟随者**（从）
 
 
 
-![img](images/\wps16.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps16.jpg) 
 
 由此得出结论，3个节点的集群，2个从服务器都挂掉，主服务器也无法运行。因为可运行的机器没有超过集群总数量的半数。
 
@@ -295,7 +298,7 @@ Mode为follower表示是**跟随者**（从）
 
 
 
-![img](images/\wps17.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps17.jpg) 
 
 （4）我们把3号服务器也启动起来，把2号服务器停掉,停掉后观察1号和3号的状态。
 
@@ -309,7 +312,7 @@ Mode为follower表示是**跟随者**（从）
 
 
 
-![img](images/\wps18.jpg) 
+![img](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps18.jpg) 
 
 发现新的leader产生了~  
 
@@ -326,7 +329,8 @@ Mode为follower表示是**跟随者**（从）
 
 
 
-![img](images/\wps19.jpg)![img](images/\wps20.jpg) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps19.jpg)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/Kafka-zookeeper/wps20.jpg) 
 
 我们会发现，2号服务器启动后依然是跟随者（从服务器），3号服务器依然是领导者（主服务器），没有撼动3号服务器的领导地位。
 
