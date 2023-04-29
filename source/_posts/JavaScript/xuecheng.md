@@ -22,7 +22,7 @@ top_img:
 
 网站根目录是指存放网站的**第一层**文件夹，内部包含当前网站的**所有素材**，包含 HTML、CSS、图片、JavaScript等等。 
 
-![1680336645218](assets/1680336645218.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680336645218.jpg)
 
 * 首页引入CSS文件
 
@@ -34,7 +34,7 @@ top_img:
 
 ## 02-版心居中
 
-![1680336711608](assets/1680336711608.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680336711608.jpg)
 
 ```css
 .wrapper {
@@ -57,7 +57,7 @@ body {
 
 ## 04-header区域-整体布局
 
-![1680337054328](assets/1680337054328.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337054328.jpg)
 
 ### HTML结构
 
@@ -94,7 +94,7 @@ body {
 
 ## 05-header区域-logo
 
-![1680337229070](assets/1680337229070.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337229070.jpg)
 
 logo 功能：
 
@@ -131,7 +131,7 @@ logo 功能：
 * 标签结构：ul > **li * 3** > a
 * 优势：**避免堆砌 a 标签**，**网站搜索排名降级**
 
-![1680337390943](assets/1680337390943.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337390943.jpg)
 
 ### HTML结构
 
@@ -176,7 +176,7 @@ logo 功能：
 
 ## 07-header区域-搜索布局
 
-![1680337525496](assets/1680337525496.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337525496.jpg)
 
 ### HTML结构
 
@@ -238,7 +238,7 @@ logo 功能：
 
 ## 09-header区域-用户区域
 
-![1680337703358](assets/1680337703358.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337703358.jpg)
 
 ### HTML结构
 
@@ -274,7 +274,7 @@ logo 功能：
 
 ## 10-banner区域-布局
 
-![1680337778559](assets/1680337778559.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680337778559.jpg)
 
 ### HTML结构
 
@@ -353,7 +353,7 @@ logo 功能：
 
 ## 12-banner区域-课程表布局
 
-![1680338145736](assets/1680338145736.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680338145736.jpg)
 
 ### HTML布局
 
@@ -468,7 +468,7 @@ logo 功能：
 
 ## 15-精品推荐-区域布局
 
-![1680338252106](assets/1680338252106.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680338252106.jpg)
 
 ### HTML结构
 
@@ -549,7 +549,7 @@ logo 功能：
 
 ## 17-推荐课程-标题区域
 
-![1680338517515](assets/1680338517515.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680338517515.jpg)
 
 ### HTML结构
 
@@ -767,7 +767,7 @@ logo 功能：
 
 ## 20-前端开发工程师区域
 
-![1680339112336](assets/1680339112336.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680339112336.jpg)
 
 ### HTML结构
 
@@ -876,7 +876,7 @@ logo 功能：
 
 ## 21-版权-布局
 
-![1680339154682](assets/1680339154682.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680339154682.jpg)
 
 ### HTML结构
 
