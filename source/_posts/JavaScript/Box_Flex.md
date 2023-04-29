@@ -42,9 +42,7 @@ li:first-child {
 
 作用：创建**虚拟元素**（伪元素），用来**摆放装饰性的内容**。 
 
-![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321533901.jpg)
-
-![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321544646.jpg)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321533901.jpg)![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321544646.jpg)
 
 ```css
 div::before {
