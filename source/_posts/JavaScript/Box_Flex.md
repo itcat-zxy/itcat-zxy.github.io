@@ -25,7 +25,7 @@ top_img:
 
 作用：根据元素的**结构关系**查找元素。 
 
-![1680321408957](assets/1680321408957.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321408957.jpg)
 
 ```css
 li:first-child {
@@ -34,8 +34,7 @@ li:first-child {
 ```
 
 ### :nth-child(公式) 
-
-![1680321448162](assets/1680321448162.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321448162.jpg)
 
 > 提示：公式中的n取值从 **0** 开始。 
 
@@ -43,9 +42,9 @@ li:first-child {
 
 作用：创建**虚拟元素**（伪元素），用来**摆放装饰性的内容**。 
 
-![1680321533901](assets/1680321533901.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321533901.jpg)
 
-![1680321544646](assets/1680321544646.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321544646.jpg)
 
 ```css
 div::before {
@@ -71,7 +70,7 @@ PxCook（像素大厨） 是一款切图设计工具软件。支持PSD文件的�
 
 使用方法：创建项目 → 输入 项目名称、项目类型 Web → 单击按钮【创建项目】 → 单击按钮【添加】，导入设计稿 
 
-![1680321681695](assets/1680321681695.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680321681695.jpg)
 
 ## 03-盒子模型
 
@@ -95,9 +94,9 @@ div {
 }
 ```
 
-![1680330928735](assets/1680330928735.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680330928735.jpg)
 
-![1680330935635](assets/1680330935635.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680330935635.jpg)
 
 
 
@@ -109,7 +108,7 @@ div {
 
 属性值：边框线粗细  线条样式  颜色（不区分顺序）
 
-![1680330976390](assets/1680330976390.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680330976390.jpg)
 
 ```css
 div {
@@ -163,13 +162,13 @@ div {
 
 * padding 多值写法
 
-![1680331118330](assets/1680331118330.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331118330.jpg)
 
 > 技巧：从**上**开始**顺时针**赋值，当前方向没有数值则与**对面取值相同**。 
 
 ### 尺寸计算
 
-![1680331322935](assets/1680331322935.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331322935.jpg)
 
 默认情况：盒子尺寸 = 内容尺寸 + border 尺寸 + 内边距尺寸
 
@@ -190,7 +189,7 @@ div {
 
 ### 版心居中
 
-![1680331503466](assets/1680331503466.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331503466.jpg)
 
 左右 margin 值 为 auto（盒子要有宽度）
 
@@ -205,11 +204,11 @@ div {
 
 ### 清除默认样式 
 
-![1680331558304](assets/1680331558304.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331558304.jpg)
 
 清除标签默认的样式，比如：默认的内外边距。 
 
-![1680331580746](assets/1680331580746.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331580746.jpg)
 
 ```css
 /* 清除默认内外边距 */
@@ -230,7 +229,7 @@ li {
 
 属性名：**overflow**
 
-![1680331623305](assets/1680331623305.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331623305.jpg)
 
 ### 外边距问题
 
@@ -240,7 +239,7 @@ li {
 
 现象：取两个 margin 中的**较大值生效**
 
-![1680331672628](assets/1680331672628.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680331672628.jpg)
 
 ```css
 .one {
@@ -266,7 +265,7 @@ li {
 }
 ```
 
-![1680333860271](assets/1680333860271.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680333860271.jpg)
 
 解决方法：
 
@@ -300,13 +299,13 @@ span {
 
 提示：属性值是圆角半径
 
-![1680334014390](assets/1680334014390.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334014390.jpg)
 
 
 
 * 多值写法
 
-![1680334027657](assets/1680334027657.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334027657.jpg)
 
 > 技巧：从左上角开始顺时针赋值，当前角没有数值则与对角取值相同。 
 
@@ -322,7 +321,7 @@ img {
 }
 ```
 
-![1680334083567](assets/1680334083567.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334083567.jpg)
 
 * 胶囊形状：给长方形盒子设置圆角属性值为 盒子高度的一半 
 
@@ -335,7 +334,7 @@ div {
 }
 ```
 
-![1680334136242](assets/1680334136242.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334136242.jpg)
 
 ### 盒子阴影（拓展）
 
@@ -361,7 +360,7 @@ div {
 
 ## 04-综合案例-产品卡片
 
-![1680334221212](assets/1680334221212.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334221212.jpg)
 
 CSS 书写顺序：
 
@@ -426,7 +425,7 @@ CSS 书写顺序：
 
 
 
-![1680334329887](assets/1680334329887.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334329887.jpg)
 
 
 
@@ -543,7 +542,7 @@ a {
 
 标准流也叫文档流，指的是标签在页面中**默认的排布规则**，例如：块元素独占一行，行内元素可以一行显示多个。 
 
-![1680334840709](assets/1680334840709.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680334840709.jpg)
 
 ## 02-浮动
 
@@ -592,7 +591,7 @@ a {
 
 ### 产品区域布局
 
-![1680335016853](assets/1680335016853.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335016853.jpg)
 
 #### HTML标签
 
@@ -677,7 +676,7 @@ a {
 
 #### 场景搭建
 
-![1680335081694](assets/1680335081694.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335081694.jpg)
 
 ```html
 <style>
@@ -796,7 +795,7 @@ Flex 布局也叫**弹性布局**，是浏览器**提倡的布局模型**，非�
 
 Flex 模型不会产生浮动布局中脱标现象，布局网页更简单、更灵活。
 
-![1680335815005](assets/1680335815005.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335815005.jpg)
 
 ### Flex组成
 
@@ -809,20 +808,20 @@ Flex 模型不会产生浮动布局中脱标现象，布局网页更简单、更
 * 主轴：默认在**水平**方向
 * 侧轴 / 交叉轴：默认在**垂直**方向
 
-![1680335870554](assets/1680335870554.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335870554.jpg)
 
 ### 主轴对齐方式
 
 属性名：**justify-content**
 
-![1680335902526](assets/1680335902526.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335902526.jpg)
 
 ### 侧轴对齐方式
 
 * align-items：当前弹性容器内**所有**弹性盒子的侧轴对齐方式（给**弹性容器**设置）
 * align-self：单独控制**某个弹性盒子**的侧轴对齐方式（给**弹性盒子**设置）
 
-![1680335957166](assets/1680335957166.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335957166.jpg)
 
 ### 修改主轴方向
 
@@ -830,7 +829,7 @@ Flex 模型不会产生浮动布局中脱标现象，布局网页更简单、更
 
 属性名：**flex-direction**
 
-![1680335988425](assets/1680335988425.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680335988425.jpg)
 
 ### 弹性伸缩比
 
@@ -855,13 +854,13 @@ Flex 模型不会产生浮动布局中脱标现象，布局网页更简单、更
 
 属性名：**align-content** 
 
-![1680336183457](assets/1680336183457.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680336183457.jpg)
 
 > 注意：该属性对**单行**弹性盒子模型**无效**。 
 
 ## 04-综合案例 – 抖音解决方案 
 
-![1680336238340](assets/1680336238340.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaScript/1680336238340.jpg)
 
 ### 整体布局
 
