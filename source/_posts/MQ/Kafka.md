@@ -78,6 +78,7 @@ top_img:
 
 ### Kafka的基准测试工具
 
+
 * Kafka中提供了内置的性能测试工具
 
 	* 生产者：测试生产每秒传输的数据量（多少条数据、多少M的数据）
@@ -91,6 +92,81 @@ top_img:
 * 对比生产者和消费者：消费者的速度更快
 
 ## Kafka Java API开发
+
+### 导入Maven Kafka POM依赖
+
+```java
+<repositories><!-- 代码库 -->
+    <repository>
+        <id>central</id>
+        <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependencies>
+    <!-- kafka客户端工具 -->
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>2.4.1</version>
+    </dependency>
+
+    <!-- 工具类 -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>1.3.2</version>
+    </dependency>
+
+    <!-- SLF桥接LOG4J日志 -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.7.6</version>
+    </dependency>
+
+    <!-- SLOG4J日志 -->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.16</version>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+```
+
+### 导入log4j.properties
+
+将log4j.properties配置文件放入到resources文件夹中
+
+```java
+log4j.rootLogger=INFO,stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender 
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout 
+log4j.appender.stdout.layout.ConversionPattern=%5p - %m%n
+```
 
 ### 生产者程序开发
 
