@@ -6,7 +6,7 @@ tags:
 category: Java
 keywords: 'Java, kafka'
 description: 对消息队列的环境搭建
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/gpwmed.1z7iyv2ai5uo.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/2yzoly.7atwxvv20g40.jpg'
 abbrlink: kafka_set
 date: 2023-04-20 20:11:12
 top_img: 
