@@ -156,7 +156,7 @@ chmod u+x stop-kafka.sh
 
 
 
-## 基础操作
+### 基础操作
 
 ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/kafka/image34.jpg)
 
@@ -191,7 +191,7 @@ bin/kafka-console-consumer.sh --bootstrap-server node1.itcast.cn:9092 --topic te
 
 ### 使用Kafka Tools操作Kafka
 
-#### 连接Kafka集群
+### 连接Kafka集群
 
 > 安装Kafka Tools后启动Kafka
 
@@ -202,7 +202,7 @@ bin/kafka-console-consumer.sh --bootstrap-server node1.itcast.cn:9092 --topic te
 ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/kafka/image37.jpg)   
 
 
-#### 创建topic
+### 创建topic
 
 ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/kafka/image38.jpg)
 
@@ -213,9 +213,9 @@ bin/kafka-console-consumer.sh --bootstrap-server node1.itcast.cn:9092 --topic te
 
 
 
-### 安装Kafka-Eagle
+## 安装Kafka-Eagle
 
-#### 开启Kafka JMX 接口
+### 开启Kafka JMX 接口
 JMX(Java Management Extensions)是一个为应用程序植入管理功能的框架。JMX是一套标准的代理和服务，实际上，用户可以在任何Java应用程序中使用这些代理和服务实现管理。很多的一些软件都提供了JMX接口，来实现一些管理、监控功能。
 
 在启动Kafka的脚本前，添加：
@@ -226,7 +226,7 @@ export JMX_PORT=9988
 nohup bin/kafka-server-start.sh config/server.properties &
 ```
 
-#### 安装Kafka-Eagle
+### 安装Kafka-Eagle
 
 1. 安装JDK，并配置好JAVA_HOME。  
 2. 将kafka_eagle上传，并解压到 /export/server 目录中。
