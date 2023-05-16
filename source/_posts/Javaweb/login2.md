@@ -21,7 +21,7 @@ top_img:
 
 使用过滤器Filter来完成 登录校验功能。
 
-![image-20230107095010089](assets/image-20230107095010089.png)
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaweb/image-20230107095010089.jpg)
 
 登录校验的基本流程：
 
@@ -43,7 +43,7 @@ top_img:
 
 完成登录校验，利用Filter过滤器实现，而Filter过滤器的流程步骤：
 
-![image-20230112122130564](assets/image-20230112122130564.png) 
+![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaweb/image-20230112122130564.jpg) 
 
 
 
@@ -221,7 +221,7 @@ public class LoginCheckFilter implements Filter {
 
   由于用户没有登录，登录校验过滤器返回错误信息，前端页面根据返回的错误信息结果，自动跳转到登录页面了
 
-  ![image-20230105085212629](assets/image-20230105085212629.png)
+  ![](https://cdn.staticaly.com/gh/itcat-zxy/Image@main/javaweb/image-20230105085212629.jpg)
 
   
 
