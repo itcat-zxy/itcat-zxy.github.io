@@ -1,12 +1,15 @@
 ---
-title: 盒子模型 & Flex布局
+title: 前端汇总
 tags:
-  - java
-category: 布局网页
-keywords: 'Java, Flex'
+  - html
+  - css
+  - ajax
+  - vue
+category: vue
+keywords: 'vue'
 description: 学习前端 javaScript的基础知识
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o3okm7.5l9yyl8i4yc.jpg'
-abbrlink: box_flex
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/0589A04C1A4535F201D382C144B2ABEE.jpg'
+abbrlink: vue
 date: 2023-04-21 20:11:12
 top_img:
 ---
