@@ -6,7 +6,7 @@ tags:
 category: jquery
 keywords: 'Java,jquery'
 description: 学习前端 jquery
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/x61xdo.1dld66ebqjmo.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/647D0D09985CCD92833374E1DF600D6D.jpg'
 abbrlink: jquery
 date: 2023-04-22 20:11:12
 top_img:
