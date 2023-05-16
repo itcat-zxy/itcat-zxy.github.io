@@ -5,11 +5,7 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/5b3e.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/pdf.html</loc>
+    <loc>https://www.jodio.cc/posts/sql.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -17,15 +13,11 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/sql.html</loc>
+    <loc>https://www.jodio.cc/posts/5b3e.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
+    <loc>https://www.jodio.cc/posts/pdf.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -41,27 +33,11 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/ee9c.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/4163.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/offer.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/linux.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/2529.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -78,6 +54,10 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/jquery.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -105,11 +85,19 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
+    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/netty.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -117,15 +105,11 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
+    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/netty-advanced.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/netty-source.html</loc>
+    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -145,6 +129,22 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/2529.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/ee9c.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/4163.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
@@ -161,11 +161,11 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
+    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
+    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
 </urlset> 
