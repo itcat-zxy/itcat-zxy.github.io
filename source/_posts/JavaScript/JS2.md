@@ -6,7 +6,7 @@ tags:
 category: javaScript
 keywords: 'Java,javaScript'
 description: 学习前端 javaScript的基础知识
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qzroeq.5fa8xe3e1ek0.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/8C61A015F139ADD0ECCCF53662BDAE99.jpg'
 abbrlink: javaScript_two
 date: 2023-04-21 20:11:12
 top_img:
