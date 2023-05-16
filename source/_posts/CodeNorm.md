@@ -6,7 +6,7 @@ category: Java
 keywords: 'Java,Android'
 description: 规范代码的可读性
 sticky: 1
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/qz3dvd.23z5dyj0l3r4.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/02BAB54E40C04DA07ACD0833027CB9F5.jpg'
 abbrlink: 6f3e
 top_img: 
 date: 2023-04-08 20:11:12
