@@ -5,7 +5,7 @@ tags:
 category: 私服配置
 keywords: 'Java, Flex'
 description: 配置本地私服
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/o3okm7.5l9yyl8i4yc.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/4B9E34A28945995435502084E6284E40.jpg'
 abbrlink: nexus
 date: 2023-05-13 20:11:12
 top_img:
