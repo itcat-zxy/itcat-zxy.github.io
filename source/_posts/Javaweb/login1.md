@@ -6,7 +6,7 @@ tags:
 category: jwt
 keywords: 'Java,jwt'
 description: 登陆功能实现
-cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/x61xdo.1dld66ebqjmo.jpg'
+cover: 'https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/3420AD85DF7083E86AC1AC1D6E18BDEE.jpg'
 abbrlink: jwt1
 date: 2023-05-14 20:11:12
 top_img:
