@@ -21,11 +21,7 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <loc>https://www.jodio.cc/posts/netty.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -65,22 +61,6 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/netty.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/git.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/JVM.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
@@ -109,23 +89,11 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/os.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
+    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/concurrency.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
@@ -145,10 +113,6 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
-    <lastmod>2023-05-16</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/jwt1.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
@@ -165,7 +129,43 @@
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/git.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/os.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
+    <lastmod>2023-05-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
 </urlset> 
