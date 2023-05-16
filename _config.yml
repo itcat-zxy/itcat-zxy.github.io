@@ -5,7 +5,7 @@
 # Site
 title: JONI🥝
 subtitle: '生活明朗 万物jojo'
-description: 
+description: '生活明朗 万物jojo'
 keywords: JONI
 author: JO🥝
 language: zh-CN
@@ -168,36 +168,36 @@ plugins:
 
 # 追番插件
 # https://github.com/HCLonely/hexo-bilibili-bangumi
-bangumi: # 追番设置
-  enable: true
-  path:
-  vmid: 372204786
-  title: '追番列表'
-  quote: '生命不息，追番不止！'
-  show: 1
-  lazyload: false
-  loading:
-  metaColor:
-  color:
-  webp:
-  progress:
-  extra_options:
-    key: value
-cinema: # 追剧设置
-  enable: false
-  path:
-  vmid: 372204786
-  title: '追剧列表'
-  quote: '生命不息，追剧不止！'
-  show: 1
-  lazyload: true
-  loading:
-  metaColor:
-  color:
-  webp:
-  progress:
-  extra_options:
-    key: value
+# bangumi: # 追番设置
+#   enable: true
+#   path:
+#   vmid: 372204786
+#   title: '追番列表'
+#   quote: '生命不息，追番不止！'
+#   show: 1
+#   lazyload: false
+#   loading:
+#   metaColor:
+#   color:
+#   webp:
+#   progress:
+#   extra_options:
+#     key: value
+# cinema: # 追剧设置
+#   enable: false
+#   path:
+#   vmid: 372204786
+#   title: '追剧列表'
+#   quote: '生命不息，追剧不止！'
+#   show: 1
+#   lazyload: true
+#   loading:
+#   metaColor:
+#   color:
+#   webp:
+#   progress:
+#   extra_options:
+#     key: value
 
 
 # APlayer
