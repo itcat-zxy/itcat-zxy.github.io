@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jodio.cc/posts/redis.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/sql.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
@@ -17,39 +13,11 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/spring.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_redis.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/DevOps.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/summary.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -62,10 +30,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/git.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/JVM.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -82,6 +46,10 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/linux.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/redis.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -110,6 +78,34 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/nexus.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/spring.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/new_redis.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
 </urlset> 
