@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.jodio.cc/posts/linux.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/redis.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/sql.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
@@ -10,74 +18,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/5b3e.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/summary.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/git.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/2529.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/offer.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/linux.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/redis.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/os.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/jquery.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/jwt1.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/filter.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/nexus.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -106,6 +46,62 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/new_redis.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/summary.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/DevOps.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/6f3e.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/b5e3.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/git.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/2529.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/offer.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/os.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/jquery.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/xuecheng_vue.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/jwt1.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/filter.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/nexus.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
 </urlset> 
