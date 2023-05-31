@@ -952,7 +952,7 @@ inject:
     # 帧率检测
     - <span id="fps"></span> 
     # 安知鱼的aplayer播放器css
-    - <link rel="stylesheet" href="/css/aplayer.css">
+#     - <link rel="stylesheet" href="/css/aplayer.css">
     # 音乐馆页面
     - <link rel="stylesheet" href="/css/music.css">
     # 黑夜霓虹灯1.0, 霓虹灯(必须defer否则有时候会不生效)
@@ -992,9 +992,9 @@ inject:
     # 帧率检测
     - <script async src="/js/fps.js"></script> 
     # 安知鱼的aplayer播放器 js
-    - <script async data-pjax src="/js/anzhiyu.js"></script>
-    - <script async data-pjax src="/js/anzhiyufunction.js"></script>
-    - <script async src="/js/anzhiyuOnlyOne.js"></script>
+#     - <script async data-pjax src="/js/anzhiyu.js"></script>
+#     - <script async data-pjax src="/js/anzhiyufunction.js"></script>
+#     - <script async src="/js/anzhiyuOnlyOne.js"></script>
     # 右键菜单
     - <script type="text/javascript" src="https://cdn1.tianli0.top/npm/jquery@latest/dist/jquery.min.js"></script>
     - <script type="text/javascript" src="/js/rightmenu.js"></script>
