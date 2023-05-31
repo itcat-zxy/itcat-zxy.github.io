@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.jodio.cc/posts/JVM.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/2529.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/offer.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
@@ -25,7 +33,15 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/javaScript.html</loc>
+    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -53,11 +69,15 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    <loc>https://www.jodio.cc/posts/sort.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -101,15 +121,7 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/JVM.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/2529.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
+    <loc>https://www.jodio.cc/posts/os.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -117,23 +129,7 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/os.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
 </urlset> 
