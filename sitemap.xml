@@ -29,6 +29,24 @@
   </url>
   
   <url>
+    <loc>https://www.jodio.cc/posts/offer.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/linux.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.jodio.cc/posts/redis.html</loc>
     
     <lastmod>2023-05-31</lastmod>
@@ -57,6 +75,51 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/5b3e.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/spring.html</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
     
     <lastmod>2023-05-31</lastmod>
     
@@ -146,24 +209,6 @@
   </url>
   
   <url>
-    <loc>https://www.jodio.cc/posts/offer.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/linux.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     
     <lastmod>2023-05-31</lastmod>
@@ -219,51 +264,6 @@
   
   <url>
     <loc>https://www.jodio.cc/posts/nexus.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/spring.html</loc>
-    
-    <lastmod>2023-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
     
     <lastmod>2023-05-31</lastmod>
     
