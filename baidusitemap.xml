@@ -17,6 +17,26 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/kafka.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/spring.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/new_redis.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
@@ -26,6 +46,10 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/summary.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -49,6 +73,10 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
+    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
+    <lastmod>2023-05-31</lastmod>
+  </url>
+  <url>
     <loc>https://www.jodio.cc/posts/offer.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
@@ -57,31 +85,11 @@
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
-    <loc>https://www.jodio.cc/posts/8e2e.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
     <loc>https://www.jodio.cc/posts/cdc6.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/os.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_frame.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/interview_jvm.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/sort.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/concurrency.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
   <url>
@@ -102,30 +110,6 @@
   </url>
   <url>
     <loc>https://www.jodio.cc/posts/nexus.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/kafka.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/zookeeper.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/kafka_set.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/spring.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_frame.html</loc>
-    <lastmod>2023-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jodio.cc/posts/new_mysql.html</loc>
     <lastmod>2023-05-31</lastmod>
   </url>
 </urlset> 
