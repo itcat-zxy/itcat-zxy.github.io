@@ -114,7 +114,7 @@ avatar:
 disable_top_img: false
 
 # 主頁的 top_img   (添加封面图的 地址)
-index_img:  https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/kx8gmm.6eu6jboifxc0.jpg
+index_img: https://cdn.staticaly.com/gh/itcat-zxy/Image@main/blog/85xrpj.4j6654swupg.jpg     
 # 默認的 top_img，當頁面的 top_img 沒有配置時，會顯示 default_top_img
 default_top_img:
 
